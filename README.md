@@ -8,4 +8,10 @@ For details on how to build student environments to run this workshop in-person,
 
 ## Student Instructions
 
+### Requirements
+
+Before starting you will need the following programs on your laptop:
+- `pip`
+- `git`
+
 Students at an in-person workshop, please start at [Lab-A](Lab-A.md)
