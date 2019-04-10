@@ -26,18 +26,17 @@ kubectl --namespace rook-ceph-system get pods
 Now that Rook is installed we can go ahead and create a Ceph cluster.
 
 ```
-wget .../ceph-cluster.yaml
-kubectl apply -f ceph-cluster.yaml
+kubectl apply -f https://raw.githubusercontent.com/rook/rook/release-0.9/cluster/examples/kubernetes/ceph/cluster.yaml
 
 # Watch Rook creating pods and initializing your cluster (ctrl+c to exit once mon-a, mon-b and mon-c are Running)
-kubectl --namespace rook-ceph get pod --watch
+kubectl --namespace rook-ceph get pod --output wide --watch
 ```
 
 Rook deploys containers with minimal images, we will need a *toolbox* container to have familiars CLI tools like `ceph`, `rbd` and `rados` commonly used for testing and debugging:
 
 ```
 #  Create toolbox
-kubectl apply -f toolbox.yaml
+kubectl apply -f https://raw.githubusercontent.com/rook/rook/release-0.9/cluster/examples/kubernetes/ceph/toolbox.yaml
 
 # Wait for the toolbox to be Running
 kubectl --namespace rook-ceph get pod -l app=rook-ceph-tools
