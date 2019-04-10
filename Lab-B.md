@@ -23,7 +23,7 @@ kubectl --namespace rook-ceph-system get pods
 # Check that all Pods are 'Running 1/1'
 ```
 
-Now that Rook is installed we can go ahead and cluster a Ceph cluster.
+Now that Rook is installed we can go ahead and create a Ceph cluster.
 
 ```
 wget .../ceph-cluster.yaml
