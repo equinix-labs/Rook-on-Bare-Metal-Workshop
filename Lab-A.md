@@ -9,7 +9,26 @@ Kubernetes environment, and the Rook/Ceph management interface.
 
 ## Logging In
 
+```
+#  SSH into the jumphost
+ssh rook{01-40}@labs.packetlabs.tech
+ls -lh
 
+# Then into the kubernetes master node
+ssh kube-master
+
+# List all nodes
+kubectl get nodes
+
+# List all namespaces
+kubectl get namespaces
+
+# List pods in the default namespace
+kubectl get pods
+
+# List pods in all namespaces
+kubectl get pods --all-namespaces
+```
 
 ## Next Steps
 

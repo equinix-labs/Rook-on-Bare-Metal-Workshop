@@ -10,8 +10,6 @@ For details on how to build student environments to run this workshop in-person,
 
 ### Requirements
 
-Before starting you will need the following programs on your laptop:
-- `pip`
-- `git`
+Before starting you will need SSH on your laptop.
 
 Students at an in-person workshop, please start at [Lab-A](Lab-A.md)
