@@ -1,0 +1,7 @@
+Host kube-master
+	HostName {{ master_ip }}
+	User root
+
+Host kube-worker
+	HostName {{ worker_ip }}
+	User root

@@ -1,0 +1,23 @@
+# your Kubernetes cluster name here
+cluster_name = "lab{{ lab_id }}"
+
+# Your Packet project ID. See https://support.packet.com/kb/articles/api-integrations
+packet_project_id = "{{ lookup('env', 'PACKET_PROJECT_ID') }}"
+
+# The public SSH key to be uploaded into authorized_keys in bare metal Packet nodes provisioned
+# leave this value blank if the public key is already setup in the Packet project
+# Terraform will complain if the public key is setup in Packet
+public_key_path = "/home/lab{{ lab_id }}/.ssh/id_rsa.pub"
+
+# cluster location
+facility = "ewr1"
+
+# masters
+number_of_k8s_masters = 1
+
+plan_k8s_masters = "t1.small.x86"
+
+# nodes
+number_of_k8s_nodes = 1
+
+plan_k8s_nodes = "t1.small.x86"

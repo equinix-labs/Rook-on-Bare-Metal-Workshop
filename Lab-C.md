@@ -1,8 +1,8 @@
 # Lab C - Allocating Storage
 
-## Background
+## Goals
 
-
+* Deploy and configure a CephCluster with Rook
 
 ## Allocate Storage
 

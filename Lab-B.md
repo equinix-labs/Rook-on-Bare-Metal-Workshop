@@ -1,23 +1,16 @@
 # Lab B - Deploying Rook
 
-## Background
+## Goals
 
-
+* Deploy the Rook operator
+* Use the Rook Toolbox container
 
 ## Deploying Rook
 
-First lets download Rook's latest stable version on the *kube-master*
-```
-git clone https://github.com/rook/rook.git
-cd rook
-git checkout v0.9.3
-cd cluster/examples/kubernetes/ceph
-```
-
-Then we're ready to install Rook
+SSH into the kube-master and install Rook
 ```
 # Install the Rook Kubernetes Operator
-kubectl create -f operator.yaml
+kubectl create -f https://raw.githubusercontent.com/rook/rook/release-0.9/cluster/examples/kubernetes/ceph/operator.yaml
 
 kubectl --namespace rook-ceph-system get pods
 # Check that all Pods are 'Running 1/1'
@@ -44,6 +37,8 @@ kubectl --namespace rook-ceph get pod -l app=rook-ceph-tools
 # Open a terminal on the toolbox
 kubectl --namespace rook-ceph exec -it $(kubectl --namespace rook-ceph get pod -l "app=rook-ceph-tools" -o jsonpath='{.items[0].metadata.name}') bash
 ceph status
+
+# You can run your usual ceph commands from this container
 ```
 
 

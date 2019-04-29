@@ -1,0 +1,8 @@
+- name: "Check that env vars are defined"
+  assert:
+    that: "lookup('env', item)"
+  loop:
+    - PACKET_AUTH_TOKEN
+    - PACKET_PROJECT_ID
+  tags:
+    - preflight

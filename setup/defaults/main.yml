@@ -1,0 +1,2 @@
+kubespray_version: release-2.9
+number_labs: 1  # Refactor that as inventory?
