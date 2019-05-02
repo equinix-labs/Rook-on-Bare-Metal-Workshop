@@ -2,8 +2,7 @@
   git:
     repo: https://github.com/kubernetes-sigs/kubespray.git
     version: "{{ kubespray_version }}"
-    # TODO: in /opt ?
-    dest: kubespray
+    dest: /opt/kubespray
   tags:
     - prepare
 
