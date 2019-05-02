@@ -3,6 +3,7 @@
   gather_facts: false
   become: no
   tasks:
+    - include_vars: defaults/main.yml
     - include_tasks: tasks/preflight.yml
 
     - name: Get Kubespray
