@@ -9,14 +9,11 @@
       git:
         repo: https://github.com/kubernetes-sigs/kubespray.git
         version: "{{ kubespray_version }}"
-        # in /opt ?
+        # TODO: in /opt ?
         dest: kubespray
       tags:
         - prepare
-    - name: Add API token
-      copy:
-        path: /etc/profile
-        content: "export PACKET_AUTH_TOKEN={{ lookup('env', 'PACKET_AUTH_TOKEN') }}"
+
     - include_tasks: tasks/lab.yml
       loop: "{{ range(0, number_labs) |list }}"
       loop_control:
