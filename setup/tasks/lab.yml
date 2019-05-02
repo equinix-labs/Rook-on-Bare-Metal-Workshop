@@ -16,7 +16,7 @@
 
 - name: Setup infra
   terraform:
-    project_path: kubespray/contrib/terraform/packet
+    project_path: /opt/kubespray/contrib/terraform/packet
     state: present # Set to absent to `terraform destroy`
     force_init: true
     workspace: "lab{{ lab_id }}" # or state_file
