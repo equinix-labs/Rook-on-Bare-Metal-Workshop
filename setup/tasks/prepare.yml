@@ -6,14 +6,11 @@
     dest: kubespray
   tags:
     - prepare
-- name: Get Kubespray
-  git:
-    repo: https://github.com/kubernetes-sigs/kubespray.git
-    version: "{{ kubespray_version }}"
-    # TODO: in /opt ?
-    dest: kubespray
-  tags:
-    - prepare
+
+- name: Install unzip
+  package:
+    name: unzip
+    state: present
 
 - name: Install terraform
   unarchive:
