@@ -1,0 +1,22 @@
+- name: Get Kubespray
+  git:
+    repo: https://github.com/kubernetes-sigs/kubespray.git
+    version: "{{ kubespray_version }}"
+    # TODO: in /opt ?
+    dest: kubespray
+  tags:
+    - prepare
+- name: Get Kubespray
+  git:
+    repo: https://github.com/kubernetes-sigs/kubespray.git
+    version: "{{ kubespray_version }}"
+    # TODO: in /opt ?
+    dest: kubespray
+  tags:
+    - prepare
+
+- name: Install terraform
+  unarchive:
+    src: "https://releases.hashicorp.com/terraform/{{ terraform_version }}/terraform_{{ terraform_version }}_linux_amd64.zip"
+    dest: /usr/local/bin
+    remote_src: yes

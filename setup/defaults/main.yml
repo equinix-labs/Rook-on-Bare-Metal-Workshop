@@ -1,2 +1,4 @@
 kubespray_version: release-2.9
+terraform_version: 0.11.11
+
 number_labs: 1  # Refactor that as inventory?
