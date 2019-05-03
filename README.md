@@ -4,7 +4,7 @@ Workshop illustrating Rook (Ceph support for Kubernetes) on Packet Bare Metal
 
 ## Building Workshop Environments
 
-For details on how to build student environments to run this workshop in-person, please see [BuildingWorkshop](BuildingWorkshop.md).
+For details on how to build student environments to run this workshop in-person, please see [BuildingWorkshop](BuildingWorkshop/README.md).
 
 ## Student Instructions
 
