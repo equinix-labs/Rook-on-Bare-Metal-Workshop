@@ -9,17 +9,22 @@
 
 SSH into the kube-master and install Rook
 ```
-# Install the Rook Kubernetes Operator
-kubectl create -f https://raw.githubusercontent.com/rook/rook/release-0.9/cluster/examples/kubernetes/ceph/operator.yaml
+# Create the name space for the operator
+kubectl create namespace rook-ceph
 
-kubectl --namespace rook-ceph-system get pods
+# Install the Rook Kubernetes Operator
+kubectl create -f https://raw.githubusercontent.com/rook/rook/release-1.0/cluster/examples/kubernetes/ceph/common.yaml
+kubectl create -f https://raw.githubusercontent.com/rook/rook/release-1.0/cluster/examples/kubernetes/ceph/operator.yaml
+
+
+kubectl --namespace rook-ceph get pods
 # Check that all Pods are 'Running 1/1'
 ```
 
 Now that Rook is installed we can go ahead and create a Ceph cluster.
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/rook/rook/release-0.9/cluster/examples/kubernetes/ceph/cluster.yaml
+kubectl create -f https://raw.githubusercontent.com/rook/rook/release-1.0/cluster/examples/kubernetes/ceph/cluster.yaml
 
 # Watch Rook creating pods and initializing your cluster (ctrl+c to exit once mon-a, mon-b and mon-c are Running)
 kubectl --namespace rook-ceph get pod --output wide --watch
@@ -29,7 +34,7 @@ Rook deploys containers with minimal images, we will need a *toolbox* container 
 
 ```
 #  Create toolbox
-kubectl apply -f https://raw.githubusercontent.com/rook/rook/release-0.9/cluster/examples/kubernetes/ceph/toolbox.yaml
+kubectl apply -f https://raw.githubusercontent.com/rook/rook/release-1.0/cluster/examples/kubernetes/ceph/toolbox.yaml
 
 # Wait for the toolbox to be Running
 kubectl --namespace rook-ceph get pod -l app=rook-ceph-tools
