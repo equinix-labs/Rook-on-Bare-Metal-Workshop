@@ -1,20 +1,30 @@
 git clone https://github.com/kubernetes-sigs/kubespray
 
 # need to do this once and it'll be good for all accounts
-sudo pip install -r kubespray/requirements.txt
+#sudo pip install -r kubespray/requirements.txt
 
-ssh-keygen -t ed25519 -q -N ""
+if [ ! -f ~/.ssh/id_ed25519.pub ]; then
+  ssh-keygen -t ed25519 -q -N ""
+fi
 
-cp -LRp kubespray/contrib/terraform/packet/sample-inventory/ kubespray/inventory/alpha
-# need to add cd
-ln -s kubespray/contrib/terraform/packet/hosts kubespray/inventory/alpha
+mkdir -p kubespray/inventory/alpha
 cp cluster.tf kubespray/inventory/alpha/cluster.tf
+
+cd kubespray
+cp -LRp contrib/terraform/packet/sample-inventory/ inventory/alpha
+cd inventory/alpha
+
+ln -s ../../contrib/terraform/packet/hosts
 
 # export PACKET_AUTH_TOKEN="XYZ"
 
-#  need to add cd
-terraform init kubespray/contrib/terraform/packet/
-terraform apply --var-file=cluster.tf kubespray/contrib/terraform/packet/
+terraform init ../../contrib/terraform/packet/
+terraform apply --auto-approve --var-file=cluster.tf ../../contrib/terraform/packet/
 
 # from Kubespray/
+cd ../..
 ansible-playbook --become -i inventory/alpha/hosts cluster.yml
+
+# once you're done with the lab
+#terraform destroy -var-file=cluster.tf ../../contrib/terraform/packet/
+
