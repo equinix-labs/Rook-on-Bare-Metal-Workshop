@@ -21,10 +21,10 @@ ln -s ../../contrib/terraform/packet/hosts
 terraform init ../../contrib/terraform/packet/
 terraform apply --auto-approve --var-file=cluster.tf ../../contrib/terraform/packet/
 
-# from Kubespray/
 cd ../..
 ansible-playbook --become -i inventory/alpha/hosts cluster.yml
 
 # once you're done with the lab
-#terraform destroy -var-file=cluster.tf ../../contrib/terraform/packet/
+#cd kubespray/inventory/alpha
+#terraform destroy --auto-approve -var-file=cluster.tf ../../contrib/terraform/packet/
 
