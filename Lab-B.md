@@ -9,9 +9,6 @@
 
 SSH into the kube-master and install Rook
 ```
-# Create the name space for the operator
-kubectl create namespace rook-ceph
-
 # Install the Rook Kubernetes Operator
 kubectl create -f https://raw.githubusercontent.com/rook/rook/release-1.0/cluster/examples/kubernetes/ceph/common.yaml
 kubectl create -f https://raw.githubusercontent.com/rook/rook/release-1.0/cluster/examples/kubernetes/ceph/operator.yaml
