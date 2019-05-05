@@ -10,7 +10,7 @@ packet_project_id = "{{ lookup('env', 'PACKET_PROJECT_ID') }}"
 public_key_path = "/home/{{ lab_name }}/.ssh/id_rsa.pub"
 
 # cluster location
-facility = "ewr1"
+facility = "{{ packet_facility }}"
 
 # masters
 number_of_k8s_masters = 1
