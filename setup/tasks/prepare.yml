@@ -5,6 +5,8 @@
     dest: /opt/kubespray
   tags:
     - prepare
+  run_once: true
+  delegate_to: localhost
 
 - name: Install unzip
   package:
@@ -16,3 +18,5 @@
     src: "https://releases.hashicorp.com/terraform/{{ terraform_version }}/terraform_{{ terraform_version }}_linux_amd64.zip"
     dest: /usr/local/bin
     remote_src: yes
+  run_once: true
+  delegate_to: localhost
