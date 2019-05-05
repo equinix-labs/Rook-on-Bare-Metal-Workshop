@@ -12,6 +12,8 @@
   package:
     name: unzip
     state: present
+  run_once: true
+  delegate_to: localhost
 
 - name: Install terraform
   unarchive:
