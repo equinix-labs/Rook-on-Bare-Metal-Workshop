@@ -21,6 +21,7 @@
     force_init: true
     workspace: "lab{{ lab_id }}" # or state_file
     variables_file: "/home/lab{{ lab_id }}/cluster.tfvars"
+  register: terraform
   tags:
     - terraform
     - terraform-apply
