@@ -1,13 +1,3 @@
-- name: Get Kubespray
-  git:
-    repo: https://github.com/kubernetes-sigs/kubespray.git
-    version: "{{ kubespray_version }}"
-    dest: /opt/kubespray
-  run_once: true
-  delegate_to: localhost
-  tags:
-    - prepare
-
 - name: Install unzip
   package:
     name: unzip
