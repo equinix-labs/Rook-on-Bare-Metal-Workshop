@@ -2,6 +2,7 @@
     msg: "Starting setup for {{ lab_id }}..."
 
 - name: Setup user
+  delegate_to: localhost
   user:
     name: "lab{{ lab_id }}"
     generate_ssh_key: yes
@@ -10,11 +11,13 @@
     - ssh
 
 - name: Template the terraform.tfvars
+  delegate_to: localhost
   template:
     src: cluster.tfvars.j2
     dest: "/home/lab{{ lab_id }}/cluster.tfvars"
 
 - name: Setup infra
+  delegate_to: localhost
   terraform:
     project_path: /opt/kubespray/contrib/terraform/packet
     state: present # Set to absent to `terraform destroy`
@@ -32,16 +35,19 @@
     worker_ip: "{{ terraform.outputs.k8s_nodes.value | first }}"
 
 - name: Template the inventory.ini
+  delegate_to: localhost
   template:
     src: inventory.ini.j2
     dest: "/home/lab{{ lab_id }}/inventory.ini"
 
 - name: Template the inventory.ini
+  delegate_to: localhost
   template:
     src: ssh_config.j2
     dest: "/home/lab{{ lab_id }}/.ssh/config"
 
 - name: Install Kubernetes
+  delegate_to: localhost
   # NOTE: Install whole cluter or just master?
   # We could dump the inventory file in the user homedir for them to run Kubespray
   # `--skip-tags download` ?
