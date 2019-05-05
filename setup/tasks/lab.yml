@@ -29,7 +29,7 @@
 - name: Set IP facts
   set_fact:
     master_ip: "{{ terraform.outputs.k8s_masters.value | first }}"
-    woker_ip: "{{ terraform.outputs.k8s_nodes.value | first }}"
+    worker_ip: "{{ terraform.outputs.k8s_nodes.value | first }}"
 
 - name: Template the inventory.ini
   template:
