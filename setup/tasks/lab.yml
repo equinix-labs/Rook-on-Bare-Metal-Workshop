@@ -45,6 +45,6 @@
   # NOTE: Install whole cluter or just master?
   # We could dump the inventory file in the user homedir for them to run Kubespray
   # `--skip-tags download` ?
-  command: "ansible-playbook -i ~/inventory.ini -e ansible_user=root /opt/kubespray/cluster.yml"
+  command: "ansible-playbook -i ~/inventory.ini /opt/kubespray/cluster.yml"
   become: yes
   become_user: "lab{{ lab_id }}"
