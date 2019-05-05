@@ -17,7 +17,7 @@
   git:
     repo: https://github.com/kubernetes-sigs/kubespray.git
     version: "{{ kubespray_version }}"
-    dest: "/home/{{ lab_name }}"
+    dest: "/home/{{ lab_name }}/kubespray"
   delegate_to: localhost
   tags:
     - git
