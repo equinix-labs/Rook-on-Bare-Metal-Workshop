@@ -19,7 +19,7 @@
     src: cluster.tfvars.j2
     dest: "/home/{{ lab_name }}/cluster.tfvars"
 
-- name: Setup infra
+- name: Run terraform
   delegate_to: localhost
   terraform:
     project_path: /opt/kubespray/contrib/terraform/packet
@@ -55,7 +55,7 @@
   when:
     - terraform_state != 'absent'
 
-- name: Install Kubernetes
+- name: Run Kubespray
   delegate_to: localhost
   # NOTE: Install whole cluter or just master?
   # We could dump the inventory file in the user homedir for them to run Kubespray
