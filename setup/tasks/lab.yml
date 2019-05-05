@@ -37,7 +37,6 @@
     workspace: "{{ lab_name }}" # or state_file
     variables_file: "/home/{{ lab_name }}/cluster.tfvars"
   register: terraform
-  async: 600
   tags:
     - terraform
     - terraform-apply
@@ -73,7 +72,6 @@
   command: "ansible-playbook -i ~/inventory.ini ~/kubespray/cluster.yml"
   become: yes
   become_user: "{{ lab_name }}"
-  async: 600
   when:
     - terraform_state != 'absent'
   tags:
