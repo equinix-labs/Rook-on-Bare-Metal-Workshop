@@ -57,3 +57,5 @@
   command: "ansible-playbook -i ~/inventory.ini /opt/kubespray/cluster.yml"
   become: yes
   become_user: "{{ lab_name }}"
+  tags:
+    - kubespray
