@@ -37,7 +37,7 @@
     master_ip: "{{ terraform.outputs.k8s_masters.value | first }}"
     worker_ip: "{{ terraform.outputs.k8s_nodes.value | first }}"
   when:
-    - terraform_state == absent
+    - terraform_state == 'absent'
 
 - name: Template the inventory.ini
   delegate_to: localhost
@@ -45,7 +45,7 @@
     src: inventory.ini.j2
     dest: "/home/{{ lab_name }}/inventory.ini"
   when:
-    - terraform_state == absent
+    - terraform_state == 'absent'
 
 - name: Template the inventory.ini
   delegate_to: localhost
@@ -53,7 +53,7 @@
     src: ssh_config.j2
     dest: "/home/{{ lab_name }}/.ssh/config"
   when:
-    - terraform_state == absent
+    - terraform_state == 'absent'
 
 - name: Install Kubernetes
   delegate_to: localhost
@@ -64,6 +64,6 @@
   become: yes
   become_user: "{{ lab_name }}"
   when:
-    - terraform_state == absent
+    - terraform_state == 'absent'
   tags:
     - kubespray
