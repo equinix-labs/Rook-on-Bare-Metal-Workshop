@@ -1,5 +1,5 @@
 ---
-- hosts: localhost
+- hosts: labs
   gather_facts: false
   become: no
   tasks:
@@ -7,8 +7,5 @@
     - include_tasks: tasks/preflight.yml
     - include_tasks: tasks/prepare.yml
     - include_tasks: tasks/lab.yml
-      loop: "{{ range(0, number_labs) |list }}"
-      loop_control:
-        loop_var: lab_id
   vars:
     ansible_connection: local

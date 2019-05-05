@@ -1,5 +1,5 @@
 - set_fact:
-    lab_name: "lab{{ lab_id }}"
+    lab_name: "{{ inventory_hostname }}"
 
 - debug:
     msg: "Starting setup for {{ lab_name }}..."
