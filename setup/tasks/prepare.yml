@@ -3,10 +3,10 @@
     repo: https://github.com/kubernetes-sigs/kubespray.git
     version: "{{ kubespray_version }}"
     dest: /opt/kubespray
-  tags:
-    - prepare
   run_once: true
   delegate_to: localhost
+  tags:
+    - prepare
 
 - name: Install unzip
   package:
@@ -14,6 +14,8 @@
     state: present
   run_once: true
   delegate_to: localhost
+  tags:
+    - prepare
 
 - name: Install terraform
   unarchive:
@@ -22,3 +24,5 @@
     remote_src: yes
   run_once: true
   delegate_to: localhost
+  tags:
+    - prepare
