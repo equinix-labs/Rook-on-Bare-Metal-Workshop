@@ -1,10 +1,13 @@
+- set_fact:
+  lab_name: "lab{{ lab_id }}"
+
 - debug:
     msg: "Starting setup for {{ lab_id }}..."
 
 - name: Setup user
   delegate_to: localhost
   user:
-    name: "lab{{ lab_id }}"
+    name: "{{ lab_name }}"
     generate_ssh_key: yes
   tags:
     - user
@@ -14,7 +17,7 @@
   delegate_to: localhost
   template:
     src: cluster.tfvars.j2
-    dest: "/home/lab{{ lab_id }}/cluster.tfvars"
+    dest: "/home/{{ lab_name }}/cluster.tfvars"
 
 - name: Setup infra
   delegate_to: localhost
@@ -22,8 +25,8 @@
     project_path: /opt/kubespray/contrib/terraform/packet
     state: present # Set to absent to `terraform destroy`
     force_init: true
-    workspace: "lab{{ lab_id }}" # or state_file
-    variables_file: "/home/lab{{ lab_id }}/cluster.tfvars"
+    workspace: "{{ lab_name }}" # or state_file
+    variables_file: "/home/{{ lab_name }}/cluster.tfvars"
   register: terraform
   tags:
     - terraform
@@ -38,13 +41,13 @@
   delegate_to: localhost
   template:
     src: inventory.ini.j2
-    dest: "/home/lab{{ lab_id }}/inventory.ini"
+    dest: "/home/{{ lab_name }}/inventory.ini"
 
 - name: Template the inventory.ini
   delegate_to: localhost
   template:
     src: ssh_config.j2
-    dest: "/home/lab{{ lab_id }}/.ssh/config"
+    dest: "/home/{{ lab_name }}/.ssh/config"
 
 - name: Install Kubernetes
   delegate_to: localhost
@@ -53,4 +56,4 @@
   # `--skip-tags download` ?
   command: "ansible-playbook -i ~/inventory.ini /opt/kubespray/cluster.yml"
   become: yes
-  become_user: "lab{{ lab_id }}"
+  become_user: "{{ lab_name }}"
