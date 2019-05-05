@@ -26,6 +26,21 @@
     - terraform
     - terraform-apply
 
+- name: Set IP facts
+  set_fact:
+    master_ip: "{{ terraform.outputs.k8s_masters.value | first }}"
+    woker_ip: "{{ terraform.outputs.k8s_nodes.value | first }}"
+
+- name: Template the inventory.ini
+  template:
+    src: inventory.init.j2
+    dest: "/home/lab{{ lab_id }}/inventory.ini"
+
+- name: Template the inventory.ini
+  template:
+    src: ssh_config.j2
+    dest: "/home/lab{{ lab_id }}/.ssh/config"
+
 - name: Install Kubernetes
   # NOTE: Install whole cluter or just master?
   # We could dump the inventory file in the user homedir for them to run Kubespray
