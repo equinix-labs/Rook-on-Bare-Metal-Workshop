@@ -6,3 +6,5 @@
     - PACKET_PROJECT_ID
   tags:
     - preflight
+  run_once: true
+  delegate_to: localhost
