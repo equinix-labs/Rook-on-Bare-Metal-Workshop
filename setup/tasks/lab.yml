@@ -13,6 +13,15 @@
     - user
     - ssh
 
+- name: Get Kubespray
+  git:
+    repo: https://github.com/kubernetes-sigs/kubespray.git
+    version: "{{ kubespray_version }}"
+    dest: "/home/{{ lab_name }}"
+  delegate_to: localhost
+  tags:
+    - git
+
 - name: Template the terraform.tfvars
   delegate_to: localhost
   template:
@@ -22,7 +31,7 @@
 - name: Run terraform
   delegate_to: localhost
   terraform:
-    project_path: /opt/kubespray/contrib/terraform/packet
+    project_path: "/home/{{ lab_name }}/kubespray/contrib/terraform/packet"
     state: "{{ terraform_state | default('present') }}"
     force_init: true
     workspace: "{{ lab_name }}" # or state_file
@@ -60,7 +69,7 @@
   # NOTE: Install whole cluter or just master?
   # We could dump the inventory file in the user homedir for them to run Kubespray
   # `--skip-tags download` ?
-  command: "ansible-playbook -i ~/inventory.ini /opt/kubespray/cluster.yml"
+  command: "ansible-playbook -i ~/inventory.ini ~/kubespray/cluster.yml"
   become: yes
   become_user: "{{ lab_name }}"
   when:
