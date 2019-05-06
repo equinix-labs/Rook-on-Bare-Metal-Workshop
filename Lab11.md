@@ -1,4 +1,4 @@
-# Lab B - Deploying Rook
+# Lab 11 - Ceph Cluster and Toolbox
 
 ## Goals
 
@@ -7,16 +7,6 @@
 
 ## Deploying Rook
 
-SSH into the kube-master and install Rook
-```
-# Install the Rook Kubernetes Operator
-kubectl create -f https://raw.githubusercontent.com/rook/rook/release-1.0/cluster/examples/kubernetes/ceph/common.yaml
-kubectl create -f https://raw.githubusercontent.com/rook/rook/release-1.0/cluster/examples/kubernetes/ceph/operator.yaml
-
-
-kubectl --namespace rook-ceph get pods
-# Check that all Pods are 'Running 1/1'
-```
 
 Now that Rook is installed we can go ahead and create a Ceph cluster.
 
@@ -46,4 +36,4 @@ ceph status
 
 ## Next Steps
 
-Once you're done, proceed to [Lab-C](Lab-C.md)
+Once you're done, proceed to [Lab12](Lab12.md)

@@ -1,4 +1,4 @@
-# Lab C - Allocating Storage
+7# Lab C - Allocating Storage
 
 ## Goals
 

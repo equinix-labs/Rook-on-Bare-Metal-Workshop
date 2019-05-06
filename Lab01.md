@@ -1,4 +1,4 @@
-# Lab A - Logging In
+# Lab 01 - Lab Assignment and Verification
 
 ## Lab Assignment & Credentials
 
@@ -81,4 +81,4 @@ If you have a correct number of hosts and all are responding to ping, please pro
 
 ## Next Steps
 
-Once you're done, proceed to [Lab-02](Lab-02.md)
+Once you're done, proceed to [Lab02](Lab02.md)
