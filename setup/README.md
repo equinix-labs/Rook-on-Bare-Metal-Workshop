@@ -1,18 +1,31 @@
 # Master hosts
 
+## Lab Master Host
+
+The "Lab Master" machine can be deployed as a "t1.small.x86" (Ubuntu 16.04) since it doesn't require very much horsepower. This host does need to be accessible from the internet.
+
+
 ## Requirements
-```
+```bash
 # Install requirements
+apt-get update -y
 apt-get install -y git python-pip
 git clone https://github.com/packet-labs/Rook-on-Bare-Metal-Workshop.git
 cd Rook-on-Bare-Metal-Workshop/setup
 pip install -r requirements.txt
-
-# Put Packet env vars (PACKET_AUTH_TOKEN and PACKET_PROJECT_ID) in ~/.packet.sh
-vi ~/.packet.sh
-chmod 700 ~/.packet.sh
-source ~/.packet.sh
 ```
+
+## Packet API Key and Project ID
+Get your User API key (not Project API key) following these directions under "User Level API Key": https://support.packet.com/kb/articles/api-integrations
+
+Setup an environment PACKET_AUTH_TOKEN with the Packet User API key from the above set.
+
+```bash
+export PACKET_AUTH_TOKEN="ABCDEFGHIJKLMNOPQRSTUVWXYZ123456"
+export PACKET_PROJECT_ID="ABCDEFGH-ABCD-ABCD-ABCD-ABCDEFGHIJKL"
+```
+
+You might want to place this in your ~/.bashrc so it is available everytime you login.
 
 
 ## Usage
