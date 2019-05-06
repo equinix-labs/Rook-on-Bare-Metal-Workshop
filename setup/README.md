@@ -9,7 +9,7 @@ The "Lab Master" machine can be deployed as a "t1.small.x86" (Ubuntu 16.04) sinc
 ```bash
 # Install requirements
 apt-get update -y
-apt-get install -y git python-pip
+apt-get install -y git python-pip python-netaddr
 git clone https://github.com/packet-labs/Rook-on-Bare-Metal-Workshop.git
 cd Rook-on-Bare-Metal-Workshop/setup
 pip install -r requirements.txt
