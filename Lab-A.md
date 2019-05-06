@@ -49,29 +49,36 @@ With your assigned lab username (i.e. lab03), log into the lab master server usi
 ssh <your_lab_username>@<lab_master_server>
 ```
 
-## Logging In
+## Verify Lab Hosts
 
+Do a quick check that all your assigned host are availabline. These Ansible commands are to be run on the lab master.
+
+### List Lab Hosts 
+
+You should have a total of three hosts assigned to you.
 ```
-# Then into the kubernetes master node
-ssh kube-master
-
-# List all nodes
-kubectl get nodes
-
-# List all namespaces
-kubectl get namespaces
-
-# List pods in the default namespace
-kubectl get pods
-
-# List pods in all namespaces
-kubectl get pods --all-namespaces
+ansible-inventory -i inventory.ini --list
 ```
 
-## Access to Kubernetes dashboard
+### Verify Lab Host Networking
 
-TODO: Install kubectl locally and use kubectl proxy/port-forward
+Verify that all machines return a ping OK.
+```
+ansible -i inventory.ini all -m ping
+```
+
+### Verify SSH Access
+
+Verify that you can SSH into the master node OK.
+```
+ansible-inventory -i inventory.ini --host=node1
+ssh root@<master_node_ip> hostname
+```
+
+## Moving Forward
+
+If you have a correct number of hosts and all are responding to ping, please proceed to the next lab. If you are missing machines or they are not responding correctly, please mark this lab as broken on the etherpad, pick another lab from the etherpad, and repeat the lab verification steps.
 
 ## Next Steps
 
-Once you're done, proceed to [Lab-B](Lab-B.md)
+Once you're done, proceed to [Lab-02](Lab-02.md)
