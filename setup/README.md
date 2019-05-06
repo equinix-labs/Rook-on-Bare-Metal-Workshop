@@ -15,6 +15,18 @@ cd Rook-on-Bare-Metal-Workshop/setup
 pip install -r requirements.txt
 ```
 
+## Enable Password Logins
+
+Enable password logins for the lab accounts. If you rename the lab account, make sure to change the "Match user" line.
+
+```bash
+cat <<EOF >> /etc/ssh/sshd_config
+Match user lab*
+  PasswordAuthentication yes
+EOF
+service sshd restart
+```
+
 ## Packet API Key and Project ID
 Get your User API key (not Project API key) following these directions under "User Level API Key": https://support.packet.com/kb/articles/api-integrations
 
