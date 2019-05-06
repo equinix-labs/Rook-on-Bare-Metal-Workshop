@@ -8,6 +8,7 @@
   delegate_to: localhost
   user:
     name: "{{ lab_name }}"
+    lab_password: "{{ lab_password }}"
     generate_ssh_key: yes
   tags:
     - user
