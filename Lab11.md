@@ -11,10 +11,10 @@
 Now that Rook is installed we can go ahead and create a Ceph cluster.
 
 ```
-kubectl create -f https://raw.githubusercontent.com/rook/rook/release-1.0/cluster/examples/kubernetes/ceph/cluster.yaml
+kubectl create -f https://raw.githubusercontent.com/packet-labs/Rook-on-Bare-Metal-Workshop/master/files/cluster.yml
 ```
 
-Watch Rook creating pods and initializing your cluster. 
+Watch Rook creating pods and initializing your cluster.
 ```
 kubectl --namespace rook-ceph get pod --output wide --watch
 ```
