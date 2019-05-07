@@ -3,7 +3,7 @@
 ## Goals
 
 * Verify that Kubernetes is properly setup and running
-* Deploy an application without any storage
+* Deploy and destory a simple application
 
 ## Verify your Kubernetes Cluster
 
@@ -12,19 +12,31 @@ kubectl apply -f https://k8s.io/examples/application/deployment.yaml
 kubectl get pods --watch
 ```
 
-When the pods are all started, escape with a ctrl-c.
+Watch all the pods start up. You'll see "Ready 1/1" when all the pods are running.
+When the pods are all started, escape the watch command with a ctrl-c.
+
+## Verify Networking
+
+```
+kubectl get services
+curl <CLUSTER_IP>
+```
+
+## Tear down
 
 ```
 kubectl delete deployment nginx-deployment
+kubectl delete service nginx-deployment
 ```
 
-Verify that all the pods shut down OK.
+Verify that all the pods and services shut down OK.
 ```
 kubectl get pods
+kubectl get services
 ```
+All the nginx pods and deployments should be gone and all you will see is the Kubernetes services.
 
-If all spins up and destroy OK, proceed to the next lab.
-
+Once you've verified that your cluster works correctly, please move to the next lab.
 
 ## Next Steps
 
