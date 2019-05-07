@@ -8,6 +8,6 @@
     - include_tasks: tasks/prepare.yml
     - include_tasks: tasks/lab.yml
    handlers:
-    - import_tasks: handlers/main.yaml
+    - import_tasks: handlers/main.yml
   vars:
     ansible_connection: local
