@@ -1,4 +1,4 @@
-# Lab D - Installing an application
+# Lab 20 - Running an Application with Stateful Storage
 
 ## Goals
 
@@ -35,4 +35,4 @@ kubectl
 
 ## Next Steps
 
-Once you're done, proceed to [Lab-E](Lab-E.md)
+Once you're done, proceed to [Lab30](Lab30.md)

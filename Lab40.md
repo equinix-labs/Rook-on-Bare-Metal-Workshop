@@ -1,37 +1,29 @@
-# Lab E - Increasing Bare Metal Storage
+# Lab 40 - Increasing Bare Metal Storage
 
 ## Goals
 
-* Understand how to grow the cluster to include additional hosts that are automatically assigned to the anycast and have traffic balanced across.
+* 
 
 
-## Lab Master Access
+## Allocate Storage
 
-With your assigned lab username (i.e. lab03), log into the lab master server using the your assigned lab and the password. You'll need to use a SSH client (i.e. PuTTy).
+On the *kube-master*, use `kubectl --namespace rook-ceph describe CephCluster` to read your Ceph Cluster config, and then `kubectl --namespace rook-ceph edit CephCluster` to edit your cluster config in your favorite `$EDITOR` (`vi` by default, `:q!` to exit :) )
 
-```
-ssh <your_lab_username>@<lab_master_server>
-```
+Find the `useAllDevices: false` configuration entry and switch it to `true` in order to format all unformatted drives in the Kubernetes cluster.
 
-## Increate the host count
+Once the new Ceph Cluster configuration is saved use `kubectl --namespace rook-ceph get pod --output wide --watch` to watch what is happening:
 
-The number of workers is defined in the Terraform variables configuration file `~/cluster.tfvars` with the variable `number_of_k8s_nodes`. Increase it from the current count of 2 to 3.
+1. Rook will discover available block devices on each node
+2. Prepare the available block devices
+3. Run 1 OSD container for each block device
 
-```
-vi cluster.tfvars
-```
-
-## Examine Terraform Plan
-
-Before applying this change to the network, let's examine what Terraform is planning to do.
-```
-terraform plan ...
-```
-
-## Increasing Bare Metal Storage
-
-```
-terraform apply ...
+TODO:
+- Pin Ceph image
+- hostNetwork: true?
+- allowMultiplePerNode: false?
+- useAllDevices or directories
+- Ceph dashboard
+- Prometheus
 ```
 
 ## Next Steps
