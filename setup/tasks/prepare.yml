@@ -22,3 +22,13 @@
   when: not tf_bin.stat.exists
   tags:
     - prepare
+
+- name: Allow password auth for lab users
+  blockinfile:
+    path: /etc/ssh/sshd_config
+    block: |
+      Match User lab*
+      PasswordAuthentication yes
+  notify: reload sshd
+  tags:
+    - prepare
