@@ -35,7 +35,7 @@ While you can be a Kubernetes and Rook beginner to take this workshop, we do exp
 
 Before starting you will need SSH on your laptop.
 
-Students at an in-person workshop, please start at [Lab-A](Lab-A.md)
+Students at an in-person workshop, please start at [Lab01](Lab01.md)
 
 
 

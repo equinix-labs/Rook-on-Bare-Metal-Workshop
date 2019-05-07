@@ -8,4 +8,4 @@
 
 ## Next Steps
 
-Once you're done, proceed to [Lab20](Lab-D.md)
+Once you're done, proceed to [Lab20](Lab20.md)

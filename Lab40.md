@@ -24,8 +24,8 @@ TODO:
 - useAllDevices or directories
 - Ceph dashboard
 - Prometheus
-```
+
 
 ## Next Steps
 
-Once you're done, proceed to [Lab-F](Lab-F.md)
+Once you're done, proceed to [Lab50](Lab50.md)
