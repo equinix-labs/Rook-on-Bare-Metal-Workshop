@@ -1,8 +1,8 @@
-7# Lab 12 - Allocating Storage
+# Lab 12 - Manually Creating a Volume via Toolbox
 
 ## Goals
 
-* Deploy and configure a CephCluster with Rook
+* Manually create a volume via the toolbox
 
 
 
