@@ -8,8 +8,8 @@
 
 First we need a Ceph pool, and then a Kubernetes StorageClass.
 ```
-kubectl apply -f https://raw.githubusercontent.com/rook/rook/release-1.0/cluster/examples/kubernetes/ceph/cephblockpool.yaml
-kubectl apply -f https://raw.githubusercontent.com/rook/rook/release-1.0/cluster/examples/kubernetes/ceph/storageclass.yaml
+kubectl apply -f https://raw.githubusercontent.com/packet-labs/Rook-on-Bare-Metal-Workshop/master/files/cephblockpool.yaml
+kubectl apply -f https://raw.githubusercontent.com/packet-labs/Rook-on-Bare-Metal-Workshop/master/files/storageclass.yaml
 ```
 
 Then go in the toolbox container and verify that a ceph pool has been created:
@@ -20,9 +20,9 @@ rados lspools
 ## Create a PersistentVolume
 
 ```
-kubectl apply -f https://raw.githubusercontent.com/rook/rook/release-1.0/cluster/examples/kubernetes/ceph/pvc.yaml
+kubectl apply -f https://raw.githubusercontent.com/packet-labs/Rook-on-Bare-Metal-Workshop/master/files/pvc.yml
 ```
-Then verify that your PersistentVolumeClaim has been created with `kubectl get pvc --all-namespaces`
+Then verify that your PersistentVolumeClaim has been created with `kubectl get pvc --watch`, and wait for the volume to go into `Bound` status.
 
 Finally go in the toolbox container and verify that and RBD volume has been created:
 ```
