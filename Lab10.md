@@ -18,7 +18,7 @@ kubectl create -f https://raw.githubusercontent.com/rook/rook/release-1.0/cluste
 ```
 kubectl --namespace rook-ceph get pods --watch
 ```
-Once all the pods are "Running", ctrl-c out of the watch.
+Once all the pods are "Running", ctrl-c out of the watch to continue.
 
 ## Verify that the deployment is stood up
 ```

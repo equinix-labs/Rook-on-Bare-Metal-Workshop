@@ -28,6 +28,9 @@ Finally go in the toolbox container and verify that and RBD volume has been crea
 ```
 rbd ls -p replicapool
 ```
+
+You can also verify in the Ceph dashboard that the newly created volume is visible
+
 ## Next Steps
 
 Once you're done, proceed to [Lab20](Lab20.md)
