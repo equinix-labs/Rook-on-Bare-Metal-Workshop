@@ -1,0 +1,13 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: ceph-dashboard-external
+spec:
+  rules:
+    - host: '*'
+      http:
+        paths:
+          - path: /ceph-dashboard
+            backend:
+              serviceName: rook-ceph-mgr-dashboard
+              servicePort: 8443

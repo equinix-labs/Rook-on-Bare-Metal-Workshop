@@ -2,20 +2,26 @@
 
 ## Goals
 
-* Deploy the Rook operator
-* Use the Rook Toolbox container
+* Start up a Ceph cluster using Rook
+* Start up the Ceph Toolbox container
+* Access and play with the Ceph Toolbox
 
-## Deploying Rook
-
+## Deploying a Ceph Cluster
 
 Now that Rook is installed we can go ahead and create a Ceph cluster.
 
 ```
-kubectl create -f https://raw.githubusercontent.com/rook/rook/release-1.0/cluster/examples/kubernetes/ceph/cluster.yaml
-
-# Watch Rook creating pods and initializing your cluster (ctrl+c to exit once mon-a, mon-b and mon-c are Running)
-kubectl --namespace rook-ceph get pod --output wide --watch
+kubectl create -f https://raw.githubusercontent.com/packet-labs/Rook-on-Bare-Metal-Workshop/master/files/cluster.yml
 ```
+
+Watch Rook creating pods and initializing your cluster.
+```
+watch -n 1 -d kubectl get CephClusters,deployments,pods --all-namespaces
+```
+
+Press ctrl-c to exit once you see that your cluster is `Created` state and in `HEALTH_OK`.
+
+## Deploy Ceph Toolbox
 
 Rook deploys containers with minimal images, we will need a *toolbox* container to have familiars CLI tools like `ceph`, `rbd` and `rados` commonly used for testing and debugging:
 

@@ -29,6 +29,8 @@
   template:
     src: cluster.tfvars.j2
     dest: "/home/{{ lab_name }}/cluster.tfvars"
+    owner: "{{ lab_name }}"
+    group: "{{ lab_name }}"
 
 - name: Run terraform
   delegate_to: localhost
@@ -55,14 +57,18 @@
   template:
     src: inventory.ini.j2
     dest: "/home/{{ lab_name }}/inventory.ini"
+    owner: "{{ lab_name }}"
+    group: "{{ lab_name }}"
   when:
     - terraform_state != 'absent'
 
-- name: Template the inventory.ini
+- name: Template the .ssh/config
   delegate_to: localhost
   template:
     src: ssh_config.j2
     dest: "/home/{{ lab_name }}/.ssh/config"
+    owner: "{{ lab_name }}"
+    group: "{{ lab_name }}"
   when:
     - terraform_state != 'absent'
 

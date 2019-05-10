@@ -69,10 +69,10 @@ ansible -i inventory.ini all -m ping
 
 ### Verify SSH Access
 
-Verify that you can SSH into the master node OK.
+Lookup the master node IP and verify that SSH works.
 ```
-ansible-inventory -i inventory.ini --host=node1
-ssh root@<master_node_ip> hostname
+ansible-inventory -i inventory.ini --host=node1 | jq '.ansible_host' | cut -d "\"" -f 2
+ssh root@$(ansible-inventory -i inventory.ini --host=node1 | jq '.ansible_host' | cut -d "\"" -f 2)
 ```
 
 ## Moving Forward
