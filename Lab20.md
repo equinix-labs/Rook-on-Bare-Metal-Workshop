@@ -13,10 +13,24 @@ With your assigned lab username (i.e. lab03), log into the lab master server usi
 ssh <your_lab_username>@<lab_master_server>
 ```
 
-## Install wordpress
+## Download and Examine Application Config Files
+
 
 ```
-kubectl ...
+wget https://raw.githubusercontent.com/rook/rook/master/cluster/examples/kubernetes/wordpress.yaml
+wget https://raw.githubusercontent.com/rook/rook/master/cluster/examples/kubernetes/mysql.yaml
+```
+
+
+## Create Applications
+
+```
+kubectl create -f mysql.yaml
+kubectl create -f wordpress.yaml
+```
+
+```
+kubectl get svc wordpress --watch
 ```
 
 ## Examine the created resources
@@ -35,4 +49,4 @@ kubectl
 
 ## Next Steps
 
-Once you're done, proceed to [Lab30](Lab30.md)
+Once you're done, proceed to [Lab21](Lab21.md)
