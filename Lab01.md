@@ -16,6 +16,15 @@ Each student has been allocated a number of bare metal hosts with Kubernetes alr
 In this first lab, you'll be verifying that you can log into all the physical bare metal, the
 Kubernetes environment, and the Rook/Ceph management interface.
 
+## Deployed Bare Metal per Lab
+
+| Node     | CPU cores      | Memory (GB) | Boot (GB SSD) | Storage (GB SSD) | Details
+|----------|----------------|-------------|---------------|------------------|---------
+| Master   | 4 x 2.4 GHz    | 8 GB        | 1 x 80        | None             |[t1.small.x86](https://www.packet.com/cloud/servers/t1-small/)
+| Node     | 24 x 2.2 GHz   | 64 GB       | 2 x 120       | 2 x 480          |[c2.medium.x86](https://www.packet.com/cloud/servers/c2-medium-epyc/)
+
+
+Boot drives are formatted with an file system while storage drives are unallocated and available as raw devices.
 
 ## Layout
 
