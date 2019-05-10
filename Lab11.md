@@ -22,9 +22,6 @@ Edit the file:
 
 Create the data directory for Rook to save data as defined in the config.
 
-```
-mkdir /var/lib/rook
-```
 
 Start up the single node cluster.
 ```
@@ -37,6 +34,17 @@ watch -n 1 -d kubectl get CephClusters,deployments,pods --all-namespaces
 ```
 
 Press ctrl-c to exit once you see that your cluster is `Created` state and in `HEALTH_OK`.
+
+## Examine Cluster
+
+Take a look in the Rook data directory on the file system and see that Rook files are in place.
+
+```
+kubectl get CephClusters --namespace rook-ceph
+ls /var/lib/rook
+```
+
+
 
 ## Deploy Ceph Toolbox
 
