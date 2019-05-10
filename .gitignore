@@ -1,2 +1,3 @@
 setup/kubespray
 *.retry
+setup/labs.ini
