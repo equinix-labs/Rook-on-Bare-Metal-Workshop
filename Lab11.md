@@ -11,7 +11,7 @@
 Now that Rook is installed we can go ahead and create a Ceph cluster.
 
 ```
-kubectl create -f https://raw.githubusercontent.com/packet-labs/Rook-on-Bare-Metal-Workshop/master/files/cluster.yml
+kubectl create -f https://raw.githubusercontent.com/packet-labs/Rook-on-Bare-Metal-Workshop/master/configs/cluster.yml
 ```
 
 Watch Rook creating pods and initializing your cluster.
