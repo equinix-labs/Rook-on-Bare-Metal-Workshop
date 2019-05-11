@@ -2,7 +2,7 @@
 
 ## Goals
 
-* 
+*
 
 
 ## Allocate Storage
@@ -16,14 +16,6 @@ Once the new Ceph Cluster configuration is saved use `kubectl --namespace rook-c
 1. Rook will discover available block devices on each node
 2. Prepare the available block devices
 3. Run 1 OSD container for each block device
-
-TODO:
-- Pin Ceph image
-- hostNetwork: true?
-- allowMultiplePerNode: false?
-- useAllDevices or directories
-- Ceph dashboard
-- Prometheus
 
 
 ## Next Steps
