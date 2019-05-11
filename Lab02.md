@@ -3,7 +3,7 @@
 ## Goals
 
 * Verify that Kubernetes is properly setup and running
-* Deploy and destory a simple application
+* Deploy and destroy a simple application
 
 ## Verify your Kubernetes Cluster
 
