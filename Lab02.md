@@ -9,6 +9,7 @@
 
 ```
 kubectl apply -f https://k8s.io/examples/application/deployment.yaml
+kubectl expose deploy nginx-deployment
 kubectl get pods --watch
 ```
 
