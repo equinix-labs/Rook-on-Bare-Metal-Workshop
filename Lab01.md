@@ -34,7 +34,7 @@ Boot drives are formatted with an file system while storage drives are unallocat
                                      |                    |
 +----------------------+   SSH       |                 +--v-----------------------+
 |                      +-------------+                 |                          |
-| Lab Master           |                               | lab05-k8s-master-1       |
+| Lab Master           |                               | node1                    |
 | Terraform            |                               | Kubernetes master+worker |
 | shared by students   |                               | login: root              |
 | login: labXX         +---v                           | student dedicated        |
@@ -42,7 +42,7 @@ Boot drives are formatted with an file system while storage drives are unallocat
                            |
                            |                           +----------------------+
                            |                           |                      |
-                           |                           | lab05-k8s-node-1     |
+                           |                           | node2                |
                            |                           | Kubernetes worker    |
                            +-------------------------->+ login: root          |
                                     SSH                | student dedicated    |
@@ -62,7 +62,7 @@ ssh <your_lab_username>@<lab_master_server>
 
 Do a quick check that all your assigned host are availabline. These Ansible commands are to be run on the lab master.
 
-### List Lab Hosts 
+### List Lab Hosts
 
 You should have a total of three hosts assigned to you.
 ```

@@ -7,7 +7,7 @@
 
 ## Deploying Rook
 
-SSH into the kube-master and deploy the Rook operator.
+SSH into the node1 and deploy the Rook operator.
 
 ```
 kubectl create -f https://raw.githubusercontent.com/rook/rook/release-1.0/cluster/examples/kubernetes/ceph/common.yaml
