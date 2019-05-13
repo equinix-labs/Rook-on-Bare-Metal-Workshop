@@ -1,4 +1,4 @@
-# Lab 80 - Monitoring Rook with Prometheus & Graphana
+# Lab 80 - Monitoring Rook with Prometheus & Grafana
 
 ## Goals
 
