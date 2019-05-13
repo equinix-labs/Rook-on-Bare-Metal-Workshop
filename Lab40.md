@@ -31,6 +31,12 @@ Once the new Ceph Cluster configuration is saved use `watch -n1 -d kubectl -n ro
 2. Run 1 OSD container for each block device
 
 
+## Increase replicas
+
+Back in [Lab13](Lab13.md) we created a pool with replica size 1, now that we have added a second server to the cluster it's time to increase the replica. Use the `kubectl -n rook-ceph edit CephBlockPools` command to edit the size of the pool from `size: 1` to `size: 2`.
+
+You can then do a `watch -n1 -d ceph status` in the Toolbox shell to wait for the rebalancing.
+
 ## Next Steps
 
 Once you're done, proceed to [Lab50](Lab50.md)
