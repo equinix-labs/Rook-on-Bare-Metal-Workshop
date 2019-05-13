@@ -31,7 +31,7 @@ kubectl -n rook-cockroachdb describe clusters.cockroachdb.rook.io
 
 Then wait for all pods to be `Running`:
 ```
-watch -n1 -d kubectl -n rook-cockroachdb get pods
+watch -n1 -d kubectl -n rook-cockroachdb get pods,pvc
 ```
 
 ## Use your CockroachDB cluster
