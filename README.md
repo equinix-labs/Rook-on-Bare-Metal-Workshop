@@ -26,7 +26,7 @@ While you can be a Kubernetes and Rook beginner to take this workshop, we do exp
 - Simulating and Recovering from a Storage Node Failure [Lab50](Lab50.md)
 - Object Storage with RadosGW [Lab60](Lab60.md)
 - Defining a PersistentVolumeClaim [Lab70](Lab70.md)
-- Monitoring Rook with Prometheus & Graphana [Lab80](Lab80.md)
+- Monitoring Rook with Prometheus & Grafana [Lab80](Lab80.md)
 - Rolling upgrading of Ceph Cluster [Lab90](Lab90.md)
 
 ## Student Instructions
