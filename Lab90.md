@@ -1,36 +1,24 @@
-# Lab 40 - Increasing Bare Metal Storage
+# Lab 40 - Rolling upgrade of Ceph
 
 ## Goals
 
-* Add the second server to your cluster
+* Upgrade from Ceph Mimic to Ceph Luminous
 
-## Scale the Kubernetes cluster
-On the kab master, start by inspecting the `[kube-node]` section of your `~/inventory.ini` file, you should see that the second node is commented out, and therefore doesn't participate in our Kubernetes cluster. Let's fix that by uncommenting the second node.
 
-Now we need to run the `scale.yml` Ansible playbook to apply the changes, that operation takes 10~15 minutes.
-```
-ansible-playbook -i ~/inventory.ini ~/kubespray/scale.yml
-```
+## Upgrade Ceph
 
-## Allocate Storage
-
-As soon as the new server joins the Kubernetes cluster, Rook will collect information about the block devices: size, type, availability, etc...
-You can see this happening with the `kubectl --namespace rook-ceph get pods -l app=rook-discover -o wide`
-
-On the *node1*, use `kubectl --namespace rook-ceph edit CephCluster` to edit your cluster config in your favorite `$EDITOR` (`vi` by default, `:q!` to exit :) )
-
-Find the `nodes:` section and add the following:
+In [Lab11](Lab11.md) we deployed Ceph Mimic (v13.2.5), we will upgrade to Ceph Nautilus.
+To do that we need to change the image used by our Ceph cluster from `image: ceph/ceph:v13.2.5-20190410` to `image: ceph/ceph:v14....`
 
 ```
-- name: node2
+kubectl -n rook-ceph edit CephCluster rook-ceph
 ```
 
-Once the new Ceph Cluster configuration is saved use `watch -n1 -d kubectl -n rook-ceph get pods,CephClusters,nodes -o wide` to watch what is happening:
-
-1. Prepare the available block devices
-2. Run 1 OSD container for each block device
-
+Then we can watch Rook work
+```
+watch -n 1 -d kubectl -n rook-ceph get CephClusters,deployments,pods
+```
 
 ## Next Steps
 
-Once you're done, proceed to [Lab50](Lab50.md)
+Once you're done, proceed to [Lab60](Lab60.md)

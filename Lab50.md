@@ -1,23 +1,9 @@
-# Lab 40 - Rolling upgrade of Ceph
+# Lab 50 - Simulating and Recovering from a Storage Node Failure
 
 ## Goals
 
-* Upgrade from Ceph Mimic to Ceph Luminous
+* TBD
 
-
-## Upgrade Ceph
-
-In [Lab11](Lab11.md) we deployed Ceph Mimic (v13.2.5), we will upgrade to Ceph Nautilus.
-To do that we need to change the image used by our Ceph cluster from `image: ceph/ceph:v13.2.5-20190410` to `image: ceph/ceph:v14....`
-
-```
-kubectl -n rook-ceph edit CephCluster rook-ceph
-```
-
-Then we can watch Rook work
-```
-watch -n 1 -d kubectl -n rook-ceph get CephClusters,deployments,pods
-```
 
 ## Next Steps
 
