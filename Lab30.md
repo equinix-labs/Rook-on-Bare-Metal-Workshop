@@ -34,11 +34,42 @@ Then wait for all pods to be `Running`:
 watch -n1 -d kubectl -n rook-cockroachdb get pods,pvc
 ```
 
-## Use your CockroachDB cluster
+## Access your CockroachDB cluster
 
 ```
-kubectl -n rook-cockroachdb-system exec -it $(kubectl -n rook-cockroachdb-system get pod -l app=rook-cockroachdb-operator -o jsonpath='{.items[0].metadata.name}') -- /cockroach/cockroach sql --insecure --host=cockroachdb-public.rook-cockroachdb -d test -e 'select * from kv'
+kubectl -n rook-cockroachdb-system exec -it $(kubectl -n rook-cockroachdb-system get pod -l app=rook-cockroachdb-operator -o jsonpath='{.items[0].metadata.name}') -- /cockroach/cockroach sql --insecure --host=cockroachdb-public.rook-cockroachdb
 ```
+Then you will reach an SQL prompt where you can run SQL commands. CockroachDB is compatible with PostgresQL commands and protocol, so let's give it a try with the following example:
+```
+show databases;
+create database example;
+use example;
+create table customers (id INT, first_name VARCHAR(64) NOT NULL, last_name VARCHAR(64) NOT NULL, PRIMARY KEY (id));
+insert into customers VALUES (1, 'John', 'Smith');
+insert into customers VALUES (2, 'John', 'Snow');
+insert into customers VALUES (3, 'Jane', 'Smith');
+insert into customers VALUES (4, 'Samwell', 'Tarly');
+insert into customers VALUES (5, 'Donnel', 'Hill');
+insert into customers VALUES (6, 'Jafer', 'Flowers');
+select * from customers;
+select first_name, count(*) from customers group by first_name;
+```
+
+## Access the CockroachDB UI
+
+Just like the Ceph dashboard we will expose the CockroachDB dashboard on a random port number with the `kubectl expose` command:
+```
+kubectl -n rook-cockroachdb expose svc --port 8080 --type NodePort --name cockroachdb-admin cockroachdb-public
+```
+
+Then we find the URL with:
+```
+IP=$(kubectl get nodes -o jsonpath='{.items[0].status.addresses[].address}')
+PORT=$(kubectl -n rook-cockroachdb get svc cockroachdb-admin -o jsonpath='{.spec.ports[].nodePort}')
+echo "Your dashboard is available at: https://$IP:$PORT/"
+```
+
+Explore the CockroachDB dashboard you will find SQL cluster health, SQL metrics and DB information.
 
 ## Next Steps
 

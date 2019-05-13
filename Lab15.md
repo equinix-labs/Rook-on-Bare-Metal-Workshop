@@ -15,7 +15,7 @@ The `--type NodePort` will pick a random available external port number to expos
 Then you need to find the address of the cluster and the port associated with the dashboard:
 
 ```
-IP=$(kubectl get nodes -o jsonpath='{.items[*].status.addresses[].address}')
+IP=$(kubectl get nodes -o jsonpath='{.items[0].status.addresses[].address}')
 PORT=$(kubectl -n rook-ceph get svc ceph-dashboard-external -o jsonpath='{.spec.ports[].nodePort}')
 echo "Your dashboard is available at: https://$IP:$PORT/"
 ```
