@@ -19,7 +19,7 @@ When the pods are all started, escape the watch command with a ctrl-c.
 ## Verify Networking
 
 ```
-kubectl get services
+kubectl get services nginx-deployment
 curl <CLUSTER_IP>
 ```
 
