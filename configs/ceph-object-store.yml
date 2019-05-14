@@ -1,0 +1,24 @@
+apiVersion: ceph.rook.io/v1
+kind: CephObjectStore
+metadata:
+  name: my-store
+  namespace: rook-ceph
+  labels:
+    app: rook-ceph-rgw
+spec:
+  metadataPool:
+    failureDomain: host
+    replicated:
+      size: 2
+  dataPool:
+    failureDomain: osd
+    erasureCoded:
+      dataChunks: 3
+      codingChunks: 1
+  gateway:
+    type: s3
+    sslCertificateRef:
+    port: 80
+    securePort:
+    instances: 1
+    allNodes: false
