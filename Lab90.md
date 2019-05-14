@@ -7,7 +7,7 @@
 
 ## Upgrade Ceph
 
-In [Lab11](Lab11.md) we deployed Ceph Mimic (v13.2.5), we will upgrade to Ceph Nautilus.
+In [Lab11](Lab11.md) we deployed Ceph Mimic (v13.2.5) and now we will upgrade to Ceph Nautilus.
 To do that we need to change the image used by our Ceph cluster from `image: ceph/ceph:v13.2.5-20190410` to `image: ceph/ceph:v14....`
 
 ```
