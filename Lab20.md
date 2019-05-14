@@ -44,7 +44,9 @@ kubectl get Services
 ## Access the application
 
 ```
-kubectl
+IP=$(kubectl get nodes -o jsonpath='{.items[0].status.addresses[].address}')
+PORT=$(kubectl get svc wordpress -o jsonpath='{.spec.ports[].nodePort}')
+echo "Your wordpress is available at: http://$IP:$PORT/"
 ```
 
 ## Next Steps
