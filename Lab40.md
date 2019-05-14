@@ -6,7 +6,7 @@
 
 ## Scale up the Kubernetes cluster
 
-On the lab master, start by inspecting the `[kube-node]` section of your `~/inventory.ini` file. You'll see that the second node is commented out and therefore hasn't joined our Kubernetes cluster. Uncomment the second node amd join it to the cluster.
+On the lab master, start by inspecting the `[kube-node]` section of your `~/inventory.ini` file. You'll see that the second node is commented out and therefore hasn't joined our Kubernetes cluster. Uncomment the second node and join it to the cluster.
 
 Now we need to run the `scale.yml` Ansible playbook to apply the changes, that operation takes 10~15 minutes.
 ```
