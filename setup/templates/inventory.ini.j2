@@ -11,6 +11,9 @@ helm_enable=True
 ingress_nginx_enabled=True
 ingress_nginx_host_network=True
 
+# Match flexvolume dir with Rook default
+kubelet_flexvolumes_plugins_dir=/usr/libexec/kubernetes/kubelet-plugins/volume/exec
+
 ## Other settings
 # Disable StrictHostKeyChecking for all hosts
 ansible_ssh_extra_args='-o StrictHostKeyChecking=no'
