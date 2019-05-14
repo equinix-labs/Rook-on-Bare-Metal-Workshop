@@ -2,7 +2,7 @@
 
 ## Goals
 
-*
+* Deploy and use CockroachDB operator
 
 ## Install the CockroachDB operator
 
