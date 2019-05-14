@@ -1,4 +1,4 @@
-# Lab 11 - Ceph Toolbox
+# Lab 12 - Ceph Toolbox
 
 ## Goals
 
