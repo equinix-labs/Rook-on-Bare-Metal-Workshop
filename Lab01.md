@@ -64,7 +64,7 @@ Do a quick check that all your assigned hosts are available. These Ansible comma
 
 ### List Lab Hosts
 
-You should have a total of three hosts assigned to you.
+You should have a total of two hosts assigned to you.
 ```
 ansible-inventory -i inventory.ini --list
 ```
@@ -80,8 +80,7 @@ ansible -i inventory.ini all -m ping
 
 Lookup the master node IP and verify that SSH works.
 ```
-ansible-inventory -i inventory.ini --host=node1 | jq '.ansible_host' | cut -d "\"" -f 2
-ssh root@$(ansible-inventory -i inventory.ini --host=node1 | jq '.ansible_host' | cut -d "\"" -f 2)
+ssh node1
 ```
 
 ## Moving Forward
