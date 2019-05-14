@@ -7,7 +7,7 @@
 
 ## Lab Master Access
 
-With your assigned lab username (i.e. lab03), log into the lab master server using the your assigned lab and the password. You'll need to use a SSH client (i.e. PuTTy).
+With your assigned lab username (i.e. lab03), log into the lab master server using your assigned lab and the password. You'll need to use a SSH client (i.e. PuTTy).
 
 ```
 ssh <your_lab_username>@<lab_master_server>
