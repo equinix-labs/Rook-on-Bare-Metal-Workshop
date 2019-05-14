@@ -21,7 +21,7 @@ kubectl create -f https://raw.githubusercontent.com/packet-labs/Rook-on-Bare-Met
 
 Watch Rook creating pods and initializing your cluster.
 ```
-watch -n 1 -d kubectl get CephClusters,deployments,pods --all-namespaces
+watch -n 1 -d kubectl -n rook-ceph get CephClusters,deployments,pods
 ```
 
 Press ctrl-c to exit once you see that your cluster is `Created` state and in `HEALTH_OK`.
