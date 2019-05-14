@@ -22,9 +22,11 @@ kubectl create -f mysql.yaml
 kubectl create -f wordpress.yaml
 ```
 
+Then let's wait for the pods to be ready
 ```
-kubectl get svc wordpress --watch
+watch -n1 -d kubectl get pods
 ```
+ctrl-c once the pods are `Running`
 
 ## Examine the created resources
 
