@@ -11,7 +11,7 @@
 kubectl create -f https://raw.githubusercontent.com/rook/rook/release-1.0/cluster/examples/kubernetes/cockroachdb/operator.yaml
 ```
 
-Waitf for all pods to be `Running`
+Wait for all pods to be `Running`
 ```
 watch -n 1 -d kubectl -n rook-cockroachdb-system get pods
 ```
