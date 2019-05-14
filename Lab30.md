@@ -19,7 +19,7 @@ Then `ctrl+c` out to continue.
 
 ## Your first CockroachDB cluster
 
-We will use tell Rook to install a 3 nodes CockroachDB cluster. Each node will have a 1 GB Ceph volume.
+We will use Rook to install a 3 nodes CockroachDB cluster. Each node will have a 1 GB Ceph volume.
 ```
 kubectl create -f https://raw.githubusercontent.com/packet-labs/Rook-on-Bare-Metal-Workshop/master/configs/cockroachdb-cluster.yml
 ```
