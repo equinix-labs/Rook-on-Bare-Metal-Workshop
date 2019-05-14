@@ -1,4 +1,4 @@
-# Lab 12 - Creating a Volume via Rook
+# Lab 13 - Creating a Volume via Rook
 
 ## Goals
 
