@@ -2,7 +2,7 @@
 
 Welcome to the "Rook on Bare Metal Workshop"! This hands on workshop takes you through using Rook to provide stateful storage atop bare metal physical services to containerized workloads. You'll be provided with dedicated bare metal infrastructure (physical hosts) installed as Kubernetes nodes, lab instructions, and an instructor to follow through all the steps.
 
-If at anytime you break you environment or otherwise get yourself stuck, don't panic. Simply take another unassigned lab environment and pick up where you left off. We'll rebuild the broken environment and make it available for someone else.
+If at anytime you break your environment or otherwise get yourself stuck, don't panic. Simply take another unassigned lab environment and pick up where you left off. We'll rebuild the broken environment and make it available for someone else.
 
 ## Student Prerequisites
 
