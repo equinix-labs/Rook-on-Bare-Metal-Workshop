@@ -36,6 +36,8 @@ kubectl get PersistentVolumeClaim
 kubectl get Services
 ```
 
+Run `rbd ls -p replicapool` in the toolbox container
+
 ## Access the application
 
 ```
