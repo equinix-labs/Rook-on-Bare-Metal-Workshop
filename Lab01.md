@@ -24,7 +24,7 @@ Kubernetes environment, and the Rook/Ceph management interface.
 | Node     | 24 x 2.2 GHz   | 64 GB       | 2 x 120       | 2 x 480          |[c2.medium.x86](https://www.packet.com/cloud/servers/c2-medium-epyc/)
 
 
-Boot drives are formatted with an file system while storage drives are unallocated and available as raw devices.
+Boot drives are formatted with a file system while storage drives are unallocated and available as raw devices.
 
 ## Layout
 
@@ -52,7 +52,7 @@ Boot drives are formatted with an file system while storage drives are unallocat
 
 ## Lab Master Access
 
-With your assigned lab username (i.e. lab03), log into the lab master server using the your assigned lab and the password. You'll need to use a SSH client (i.e. PuTTy).
+With your assigned lab username (i.e. lab03), log into the lab master server using your assigned lab and the password. You'll need to use a SSH client (i.e. PuTTy).
 
 ```
 ssh <your_lab_username>@<lab_master_server>
