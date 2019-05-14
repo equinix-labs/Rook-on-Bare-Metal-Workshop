@@ -12,7 +12,7 @@ kubectl apply -f https://raw.githubusercontent.com/packet-labs/Rook-on-Bare-Meta
 kubectl apply -f https://raw.githubusercontent.com/packet-labs/Rook-on-Bare-Metal-Workshop/master/configs/storageclass.yaml
 ```
 
-Use `kubectl describe -n rook-ceph CephBlockPools` and `kubectl describe -n rook-ceph StorageClass` to inspect the configurations. Note that the pool is configured with 1 replica since currently have only 1 OSD.
+Use `kubectl describe -n rook-ceph CephBlockPools` and `kubectl describe -n rook-ceph StorageClass` to inspect the configurations. Note that the pool is configured with 1 replica since it currently has only 1 OSD.
 
 Then go in the toolbox container and verify that a ceph pool has been created:
 ```
