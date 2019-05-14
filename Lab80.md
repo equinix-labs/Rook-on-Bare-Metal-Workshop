@@ -35,7 +35,7 @@ First let's install Grafana.
 ```
 helm install stable/grafana --name grafana --set service.type=NodePort
 ```
-Then we we will need the find the `admin` password for Grafana with:
+Then we will need to find the `admin` password for Grafana with:
 ```
 kubectl get secret grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
 ```
