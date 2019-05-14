@@ -12,4 +12,4 @@ List the availables pools with `rados lspools`
 
 ## Next Steps
 
-Once you're done, proceed to [Lab20](Lab20.md)
+Once you're done, proceed to [Lab13](Lab13.md)

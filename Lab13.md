@@ -35,4 +35,4 @@ You can also verify in the Ceph dashboard that the newly created volume is visib
 
 ## Next Steps
 
-Once you're done, proceed to [Lab20](Lab20.md)
+Once you're done, proceed to [Lab15](Lab15.md)
