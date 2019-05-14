@@ -10,7 +10,11 @@
 
 Now that Rook is installed we can go ahead and create a Ceph cluster.
 
-Start up the single node cluster.
+Take a look at the ["master-only" cluster configuration](configs/cluster-master-only.yml). Take note of:
+* spec.storage.node.names
+* spec.storage.node.names.path
+
+Start up the single node cluster using this configuration file. This will configure a small cluster using the single node and the single data directory.
 ```
 kubectl create -f https://raw.githubusercontent.com/packet-labs/Rook-on-Bare-Metal-Workshop/master/configs/cluster-master-only.yml
 ```
