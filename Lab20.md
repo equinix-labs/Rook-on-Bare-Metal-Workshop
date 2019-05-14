@@ -5,16 +5,9 @@
 * Installing an example application in the cluster
 
 
-## Lab Master Access
-
-With your assigned lab username (i.e. lab03), log into the lab master server using your assigned lab and the password. You'll need to use a SSH client (i.e. PuTTy).
-
-```
-ssh <your_lab_username>@<lab_master_server>
-```
-
 ## Download and Examine Application Config Files
 
+On the `node1` run the following commands:
 
 ```
 wget https://raw.githubusercontent.com/rook/rook/master/cluster/examples/kubernetes/wordpress.yaml
