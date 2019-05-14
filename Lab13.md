@@ -26,7 +26,7 @@ kubectl apply -f https://raw.githubusercontent.com/packet-labs/Rook-on-Bare-Meta
 ```
 Then verify that your PersistentVolumeClaim has been created with `kubectl get pvc --watch`, and wait for the volume to go into `Bound` status.
 
-Finally go in the toolbox container and verify that and RBD volume has been created:
+Finally go in the toolbox container and verify that a RBD volume has been created:
 ```
 rbd ls -p replicapool
 ```
