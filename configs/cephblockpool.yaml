@@ -5,4 +5,4 @@ metadata:
   namespace: rook-ceph
 spec:
   replicated:
-    size: 3
+    size: 1
