@@ -60,7 +60,7 @@ ssh <your_lab_username>@<lab_master_server>
 
 ## Verify Lab Hosts
 
-Do a quick check that all your assigned hosts are availabline. These Ansible commands are to be run on the lab master.
+Do a quick check that all your assigned hosts are available. These Ansible commands are to be run on the lab master.
 
 ### List Lab Hosts
 
