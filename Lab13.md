@@ -6,7 +6,7 @@
 
 ## Connect to the toolbox
 
-Use the same command as in [Lab11](Lab11.md) to open a terminal to the toolbox container.
+Use the same command as in [Lab12](Lab12.md) to open a terminal to the toolbox container.
 
 List the availables pools with `rados lspools`
 
