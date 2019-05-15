@@ -70,7 +70,7 @@ Then we find the URL with:
 ```
 IP=$(kubectl get nodes -o jsonpath='{.items[0].status.addresses[].address}')
 PORT=$(kubectl -n rook-cockroachdb get svc cockroachdb-admin -o jsonpath='{.spec.ports[].nodePort}')
-echo "Your dashboard is available at: https://$IP:$PORT/"
+echo "Your dashboard is available at: http://$IP:$PORT/"
 ```
 
 Explore the CockroachDB dashboard you will find SQL cluster health, SQL metrics and DB information.
