@@ -31,12 +31,15 @@ Once the new Ceph Cluster configuration is saved use `watch -n1 -d kubectl -n ro
 1. Prepare the available block devices
 2. Run 1 OSD container for each block device
 
+Use ctrl-c to exit the watch once your cluster is in `Created` state and `HEALTH_OK`.
 
 ## Increase replicas
 
 Back in [Lab13](Lab13.md) we created a pool with replica size 1. Now that we have added a second server to the cluster it's time to increase the replica count. Use the `kubectl -n rook-ceph edit CephBlockPools` command to edit the size of the pool from `size: 1` to `size: 2`.
 
 You can then do a `watch -n1 -d ceph status` in the Toolbox shell to wait for the rebalancing.
+
+Use ctrl-c to exit the watch.
 
 ## Next Steps
 
