@@ -50,7 +50,7 @@ Head over to that URL and login with `admin` and the password previously identif
 
 Once in Grafana you will need to click on *Add a data source* of type *Prometheus* with the URL: http://rook-prometheus.rook-ceph:9090/
 
-Once your data source is saved click on the `+` on the left side and select `Import`.
+Once your data source is saved, hover on the `+` on the left side and click `Import`.
 The dashboard IDs to import are: 2842, 5336 and 5342.
 You will need to select the Prometheus data source when importing each dashboard.
 
