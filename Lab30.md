@@ -34,6 +34,8 @@ Then wait for all pods to be `Running`:
 watch -n1 -d kubectl -n rook-cockroachdb get pods,pvc
 ```
 
+And ctrl-c to exit the watch
+
 ## Access your CockroachDB cluster
 
 ```
@@ -54,6 +56,8 @@ insert into customers VALUES (6, 'Jafer', 'Flowers');
 select * from customers;
 select first_name, count(*) from customers group by first_name;
 ```
+
+Once you are done ctrl-c to get back to `node1` shell.
 
 ## Access the CockroachDB UI
 
