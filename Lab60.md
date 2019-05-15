@@ -36,9 +36,8 @@ echo "Your secret key is: $AWS_SECRET_ACCESS_KEY"
 ```
 
 ## Install S3 client
-To test RGW we need `s3cmd`, an S3 CLI client.
+To test RGW we need `mc`, an S3 CLI client.
 ```
-apt-get install -y s3cmd
 wget -O /usr/local/bin/mc https://dl.min.io/client/mc/release/linux-amd64/mc
 chmod +x /usr/local/bin/mc
 mc --version
