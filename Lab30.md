@@ -73,7 +73,7 @@ PORT=$(kubectl -n rook-cockroachdb get svc cockroachdb-admin -o jsonpath='{.spec
 echo "Your dashboard is available at: http://$IP:$PORT/"
 ```
 
-Explore the CockroachDB dashboard you will find SQL cluster health, SQL metrics and DB information.
+Explore the CockroachDB dashboard where you will find SQL cluster health, SQL metrics and DB information.
 
 ## Next Steps
 
