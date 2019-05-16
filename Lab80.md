@@ -30,11 +30,22 @@ Prometheus has a lot of metrics, but its UI is very basic. For more complex dash
 
 ## Deploy and configure Grafana
 
+We'll need Helm to install Grafana.
+
+```
+wget https://get.helm.sh/helm-v3.0.0-alpha.1-linux-amd64.tar.gz
+tar xfvz helm-v3.0.0-alpha.1-linux-amd64.tar.gz linux-amd64/helm
+mv linux-amd64/helm /usr/local/bin/
+helm init
+helm repo update
+```
+
 First let's install Grafana.
 
 ```
-helm install stable/grafana --name grafana --set service.type=NodePort
+helm install grafana stable/grafana --set service.type=NodePort
 ```
+
 Then we will need to find the `admin` password for Grafana with:
 ```
 kubectl get secret grafana -o jsonpath="{.data.admin-password}" | base64 --decode ; echo
