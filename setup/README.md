@@ -8,24 +8,7 @@ The "Lab Master" machine can be deployed as a "t1.small.x86" (Ubuntu 16.04) sinc
 ## Requirements
 ```bash
 # Install requirements
-apt-get update -y
-apt-get install -y git python-pip python-netaddr
-git clone https://github.com/packet-labs/Rook-on-Bare-Metal-Workshop.git
-cd Rook-on-Bare-Metal-Workshop/setup
-pip install -r requirements.txt
-cp labs.ini.sample labs.ini
-```
-
-## Enable Password Logins
-
-Enable password logins for the lab accounts. If you rename the lab account, make sure to change the "Match user" line.
-
-```bash
-cat <<EOF >> /etc/ssh/sshd_config
-Match user lab*
-  PasswordAuthentication yes
-EOF
-service sshd restart
+curl https://raw.githubusercontent.com/packet-labs/Rook-on-Bare-Metal-Workshop/master/setup/requirements.sh | bash
 ```
 
 ## Packet API Key and Project ID
