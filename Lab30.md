@@ -95,7 +95,7 @@ kubectl -n rook-cockroachdb expose svc --port 8080 --type NodePort --name cockro
 Then we find the URL with:
 ```
 CRDB_IP=$(kubectl get nodes -o jsonpath='{.items[0].status.addresses[].address}')
-CRDB_PORT=$(kubectl -n rook-cockroachdb get svc cockroachdb-public -o jsonpath='{.spec.ports[].nodePort}')
+CRDB_PORT=$(kubectl -n rook-cockroachdb get svc cockroachdb-admin -o jsonpath='{.spec.ports[].nodePort}')
 echo "Your CockroachDB dashboard is available at: http://$CRDB_IP:$CRDB_PORT/"
 ```
 
