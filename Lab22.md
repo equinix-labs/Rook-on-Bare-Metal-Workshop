@@ -6,22 +6,33 @@
 * Release the assigned storage
 
 
+## Monitor the PVCs
+
+As we deprovision this environment, we're going to watch the PVCs (Persistent Volume Claims) and see that Rook deallocates the storage. You'll need two shell sessions on the Kubernetes master (node1). The first will watch the PVCs and in the second you'll deprovision the application.
+
+Start watching the PVCs
+```
+watch -n1 -d kubectl get pvc
+```
+
 ## Delete the Application
 
+The YAML files used to deploy the applications and provision the storage can be used to deprovision the environmne. This is more efficient than deprovisioning each resource (container, storage, etc) manually.
 
+
+Go ahead and deprovision the database and watch the PVC deallocate in the first shell session.
 ```
-kubectl delete -f wordpress.yaml
 kubectl delete -f mysql.yaml
 ```
 
-## Check that Storage is Released
-
-Wait for the `PersistentVolume` to be deleted with:
+And now deallocate the Wordpress application.
 ```
-watch -n1 -d kubectl get pv
+kubectl delete -f wordpress.yaml
 ```
 
-And then verify that they are gone from the pool in the toolbox container `rbd ls -p replicapool`
+## Manual Validation
+
+Through the Ceph Toolbox and/or the Ceph Dashboard, verify that all the PVCs have been released.
 
 ## Next Steps
 
