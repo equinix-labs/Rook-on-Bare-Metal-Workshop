@@ -81,10 +81,16 @@ kubectl get Services
 
 ## Examine Ceph setup via Toolbox
 
-Let's take a deeper look at has been setup in Ceph. Pull up the Ceph Toolbox container and run through some Ceph commands to examine the configuration.
+Let's take a deeper look at has been setup in Ceph.
 
+
+You should already have started up the Ceph Toolbox in an earlier lab. If you haven't, the following command will start it up.
 ```
 kubectl apply -f https://raw.githubusercontent.com/rook/rook/release-1.0/cluster/examples/kubernetes/ceph/toolbox.yaml
+```
+
+Startup a shell in the Ceph Toolbox.
+```
 kubectl --namespace rook-ceph exec -it $(kubectl --namespace rook-ceph get pod -l "app=rook-ceph-tools" -o jsonpath='{.items[0].metadata.name}') bash
 ```
 
