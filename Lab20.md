@@ -115,9 +115,14 @@ Be sure to "exit" out of the toolbox and back to the node shell when continuing 
 
 Through the Ceph dashboard (web), examine the same items that were examined via the toolbox. This information is under the "Pool" and "Block" menu items.
 
-The following will get you the dashboard URL:
+You should have exposed the Ceph Dashboard in an earlier lab. The following will expose the service if you haven't already.
+
 ```
 kubectl -n rook-ceph expose svc rook-ceph-mgr-dashboard --name ceph-dashboard-external --type NodePort
+```
+
+The following will get you the dashboard URL:
+```
 IP=$(kubectl get nodes -o jsonpath='{.items[0].status.addresses[].address}')
 PORT=$(kubectl -n rook-ceph get svc ceph-dashboard-external -o jsonpath='{.spec.ports[].nodePort}')
 echo "Your dashboard is available at: https://$IP:$PORT/"
