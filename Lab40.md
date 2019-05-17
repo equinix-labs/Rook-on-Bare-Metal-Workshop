@@ -67,4 +67,4 @@ Use ctrl-c to exit the watch.
 
 ## Next Steps
 
-Once you're done, proceed to [Lab50](Lab50.md)
+Once you're done, proceed to [Lab60](Lab60.md)
