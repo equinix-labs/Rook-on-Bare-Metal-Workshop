@@ -13,7 +13,7 @@ Monitor your cluster with the first terminal.
 watch -n1 -d kubectl -n rook-ceph get pods
 ```
 
-Kill the Ceph OSD process to simulate a failure such as a hardware node failure or a software fault.
+Using the second terminal session, kill the Ceph OSD process to simulate a failure such as a hardware node failure or a software fault.
 ```
 pkill -9 ceph-osd
 ```
