@@ -101,7 +101,7 @@ Get the details on each image (volume claim) from the listing above.
 rbd -p replicapool info <YOUR_PVC_IMAGE_NAME>
 ```
 
-Be sure to "exit" out of the toolbox and back to the node shell when continuing with the lab.
+Leave the toolbox running so you can use it in later lab steps.
 
 ## Examine Ceph setup via Dashboard
 
