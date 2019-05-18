@@ -55,7 +55,10 @@ Once the new Ceph Cluster configuration is saved use `watch -n1 -d kubectl -n ro
 1. Prepare the available block devices
 2. Run 1 OSD container for each block device
 
-Use ctrl-c to exit the watch once your cluster is in `Created` state and `HEALTH_OK`.
+Use ctrl-c to exit the watch once your cluster is in `Created` state.
+
+You might notice that the cluster is now in `HEALTH_WARN`, a `ceph status` should show that 1/4 mons is down. Indeed Rook used the second server to spread mons, but didn't cleanup the old mon just yet. Let's do that in the Toobox container with `ceph mon remove a`.
+ Now your Ceph cluster should report `HEALTH_OK`.
 
 ## Increase replicas
 
