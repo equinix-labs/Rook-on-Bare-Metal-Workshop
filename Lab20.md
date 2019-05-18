@@ -107,13 +107,7 @@ Leave the toolbox running so you can use it in later lab steps.
 
 Through the Ceph dashboard (web), examine the same items that were examined via the toolbox. This information is under the "Pool" and "Block" menu items.
 
-You should have exposed the Ceph Dashboard in an earlier lab. The following will expose the service if you haven't already.
-
-```
-kubectl -n rook-ceph expose svc rook-ceph-mgr-dashboard --name ceph-dashboard-external --type NodePort
-```
-
-The following will get you the dashboard URL:
+If you need the Ceph dashboard details, the following will get you the dashboard URL:
 ```
 IP=$(kubectl get nodes -o jsonpath='{.items[0].status.addresses[].address}')
 PORT=$(kubectl -n rook-ceph get svc ceph-dashboard-external -o jsonpath='{.spec.ports[].nodePort}')
