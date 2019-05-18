@@ -50,6 +50,18 @@ Find the `nodes:` section and add the following right under the line `name: node
 - name: node2
 ```
 
+It will look something like:
+```
+nodes:
+- name: node2
+- config: null
+  directories:
+  - config: null
+    path: /var/lib/rook
+  name: node1
+  resources: {}
+```
+
 Once the new Ceph Cluster configuration is saved use `watch -n1 -d kubectl -n rook-ceph get pods,CephClusters,nodes -o wide` to watch what is happening. You'll see the following happen:
 
 1. Prepare the available block devices
