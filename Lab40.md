@@ -6,7 +6,7 @@
 
 ## Background
 
-The current Kubernetes cluster consists of two single physical host with a single SSD drive. A second physical host without any OSD. This second physical host has several SSD drives let's tell Rook to grow out the clusters storage capabilities.
+The current Kubernetes cluster consists of one physical host with a single SSD drive and a second with several SSH drives. This second physical host has several SSD drives but has not yet been added to Rook. Let's tell Rook to grow out the clusters storage capabilities.
 
 ## Examine Bare Metal Storage
 
