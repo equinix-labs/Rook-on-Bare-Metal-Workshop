@@ -11,8 +11,8 @@
 On the `node1` run the following commands:
 
 ```
-wget https://raw.githubusercontent.com/rook/rook/master/cluster/examples/kubernetes/wordpress.yaml
-wget https://raw.githubusercontent.com/rook/rook/master/cluster/examples/kubernetes/mysql.yaml
+wget https://raw.githubusercontent.com/rook/rook/release-1.0/cluster/examples/kubernetes/wordpress.yaml
+wget https://raw.githubusercontent.com/rook/rook/release-1.0/cluster/examples/kubernetes/mysql.yaml
 ```
 
 ### Wordpress Description
