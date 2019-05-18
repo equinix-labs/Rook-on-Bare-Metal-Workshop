@@ -27,4 +27,4 @@ Run a `ceph status` in the toolbox to verify that the cluster is healthy and upg
 
 ## Next Steps
 
-Congratulations you are done with the workshop.
+Once you're done, proceed to [Lab91](Lab91.md)
