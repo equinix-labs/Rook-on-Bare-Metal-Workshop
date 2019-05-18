@@ -25,7 +25,7 @@ You should see a pool `.rgw.root` and a couple of pools starting with `my-store.
 
 To use the object storage we'll need a object store use.
 ```
-kubectl create -f https://raw.githubusercontent.com/rook/rook/master/cluster/examples/kubernetes/ceph/object-user.yaml
+kubectl create -f https://raw.githubusercontent.com/rook/rook/release-1.0/cluster/examples/kubernetes/ceph/object-user.yaml
 ```
 Rook will generate access keys for that user and store them as Kubernetes secrets. These keys can be decoded:
 ```

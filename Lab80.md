@@ -54,7 +54,7 @@ Once your data source is saved, hover on the `+` on the left side and click `Imp
 The dashboard IDs to import are: 2842, 5336 and 5342.
 You will need to select the Prometheus data source when importing each dashboard.
 
-Explore the available dashboards.
+Explore the available dashboards, it might take a couple of minutes for enough data to be ready for dashboards to be rendered.
 
 
 ## Next Steps
