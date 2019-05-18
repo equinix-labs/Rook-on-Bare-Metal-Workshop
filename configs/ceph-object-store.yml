@@ -20,5 +20,5 @@ spec:
     sslCertificateRef:
     port: 80
     securePort:
-    instances: 1
+    instances: 3
     allNodes: false
