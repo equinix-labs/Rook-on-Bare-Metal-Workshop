@@ -10,6 +10,8 @@ We will use the Prometheus Operator for monitoring, let's first install that wit
 ```
 kubectl apply -f https://raw.githubusercontent.com/coreos/prometheus-operator/v0.26.0/bundle.yaml
 ```
+Then wait for the prometheus-operator pod to be `Running` with `kubectl get pods -w`.
+
 Then we need to configure the Ceph specific configuration: monitoring endpoints, alarm levels etc...
 ```
 kubectl apply -f https://raw.githubusercontent.com/packet-labs/Rook-on-Bare-Metal-Workshop/master/configs/ceph-monitoring.yml
