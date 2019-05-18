@@ -6,21 +6,7 @@
 
 ## Background
 
-The current Kubernetes cluster consists of a single physical host with a single SSD drive. A second physical host is available as part of your lab environment for you to use. This second physical host has several SSD drives which will allow Rook and Ceph to grow out the clusters storage capabilities.
-
-## Scale up the Kubernetes cluster
-
-On the lab master, start by inspecting the `[kube-node]` section of your `~/inventory.ini` file. You'll see that the second node (node2) is commented out and wasn't added to the Kubernetes cluster when the Ansible playbooks were run.
-
-Uncomment the second node (node2) in the `~/inventory.ini`
-```
-vi ~/inventory.ini
-```
-
-Now we need to run the `scale.yml` Ansible playbook to apply the changes, that operation takes 10~15 minutes. Leave this running and start up a new terminal.
-```
-ansible-playbook -i ~/inventory.ini ~/kubespray/scale.yml
-```
+The current Kubernetes cluster consists of two single physical host with a single SSD drive. A second physical host without any OSD. This second physical host has several SSD drives let's tell Rook to grow out the clusters storage capabilities.
 
 ## Examine Bare Metal Storage
 
