@@ -4,6 +4,9 @@ Welcome to the "Rook on Bare Metal Workshop"! This hands on workshop takes you t
 
 If at anytime you break your environment or otherwise get yourself stuck, don't panic. Simply take another unassigned lab environment and pick up where you left off. We'll rebuild the broken environment and make it available for someone else.
 
+A run through of this workshop is available from Cephalocon 2019 on YouTube:
+https://youtu.be/vGsnaNekRBo
+
 ## Student Prerequisites
 
 For this workshop, you'll be using a remote Kubernetes cluster so there is no need to install any software on your laptop. When attending, please be sure to bring and have preinstalled:
