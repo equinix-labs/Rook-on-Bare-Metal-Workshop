@@ -40,7 +40,7 @@ To (re)setup the lab1 and lab4 use the `--limit` option as follows: `ansible-pla
 :warning: this will run a `terraform destroy` and will delete all data in the labs.
 To destroy **all** labs use the `-e terraform_state=absent` option as follows: `ansible-playbook -i labs.ini  main.yml -e terraform_state=absent`.
 
-You can also delete a specific lab by combining it with the `--limit` option like so: `ansible-playbook -i labs.ini  main.yml --limit lab1,lab4 -e terraforn_state=absent` will delete only lab1 and lab4 without doing anything with other labs.
+You can also delete a specific lab by combining it with the `--limit` option like so: `ansible-playbook -i labs.ini  main.yml --limit lab1,lab4 -e terraform_state=absent` will delete only lab1 and lab4 without doing anything with other labs.
 
 ### Excluding certain task
 
