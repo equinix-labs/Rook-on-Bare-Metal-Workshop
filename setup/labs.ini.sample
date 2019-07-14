@@ -6,69 +6,31 @@ packet_facility=ams1
 # Parent group
 [labs]
 lab0 packet_facility=ams1
-lab1
-lab2
-lab3
-# lab4
-# lab5
-# lab6
-# lab7
-# lab8
-# lab9
-# lab10
-# lab11
-# lab12
-# lab13
-# lab14
-# lab15
-# lab16
-# lab17
-# lab18
-# lab19
-# lab20
-# lab21
-# lab22
-# lab23
-# lab24
-# lab25
-# lab26
-# lab27
-# lab28
-# lab29
-# lab30
-# lab31
-# lab32
-# lab33
-# lab34
-# lab35
-# lab36
-# lab37
-# lab38
-# lab39
-# lab40
-# lab41
-# lab42
-# lab43
-# lab44
-# lab45
-# lab46
-# lab47
-# lab48
-# lab49
-
+#lab1
+#lab2
+#lab3
+#
 # Facility groups
 
 [labs-ams1]
-
+#lab100
+#lab101
 
 [labs-ewr1]
-
+#lab200
+#lab201
 
 [labs-sjc1]
-
+#lab300
+#lab301
 
 [labs-nrt1]
+#lab400
+#lab401
 
+[labs-dfw2]
+#lab500
+#lab501
 
 # Group configs
 [labs-ewr1:vars]
@@ -83,8 +45,12 @@ packet_facility=sjc1
 [labs-nrt1:vars]
 packet_facility=nrt1
 
+[labs-dfw2:vars]
+packet_facility=dfw2
+
 [labs:children]
 labs-ams1
 labs-ewr1
 labs-sjc1
 labs-nrt1
+labs-dfw2
