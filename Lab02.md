@@ -7,6 +7,8 @@
 
 ## Verify your Kubernetes Cluster
 
+To verify that the cluster is up and running, we're going to deploy Nginx and validate that it works OK.
+
 ```
 kubectl apply -f https://k8s.io/examples/application/deployment.yaml
 kubectl expose deploy nginx-deployment
