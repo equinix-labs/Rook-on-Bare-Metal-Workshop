@@ -71,14 +71,14 @@ But currently our RadosGWs are exposed with an internal `ClusterIP`, you can ver
 
 Just like for the Ceph dashboard we will expose the RGWs with a NodePort:
 ```
-kubectl -n rook-ceph expose service rook-ceph-rgw-my-store --name rook-ceph-rgw-my-store-extenal --type=NodePort
+kubectl -n rook-ceph expose service rook-ceph-rgw-my-store --name rook-ceph-rgw-my-store-external --type=NodePort
 ```
 We can then verify that the new service is available with `kubectl -n rook-ceph get service -l app=rook-ceph-rgw`. Two services are now deployed: a ClusterIP and a NodePort.
 
 We can find out the external URL with the following command:
 ```
 IP=$(kubectl get nodes -o jsonpath='{.items[0].status.addresses[].address}')
-PORT=$(kubectl -n rook-ceph get svc rook-ceph-rgw-my-store-extenal -o jsonpath='{.spec.ports[].nodePort}')
+PORT=$(kubectl -n rook-ceph get svc rook-ceph-rgw-my-store-external -o jsonpath='{.spec.ports[].nodePort}')
 echo "Your RadosGW bucket is available at: http://$IP:$PORT/my-bucket/"
 ```
 
