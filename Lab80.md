@@ -24,8 +24,10 @@ PORT=$(kubectl -n rook-ceph get svc rook-prometheus -o jsonpath='{.spec.ports[].
 echo "Your Prometheus UI is available at: http://$IP:$PORT/"
 ```
 
-Head over to `Status > Target` and make sure that the ceph-mgr target is `UP`, then go to `Graph` and graph following query:
-`ceph_cluster_total_used_bytes/(1024^3)` to show the total space used in gigabyte over time.
+Head over to `Status > Target` and make sure that the ceph-mgr target is `UP`.
+
+Then go to `Graph` and graph following query `ceph_cluster_total_used_bytes/(1024^3)` to show the total space used in gigabyte over time.
+
 Finally you can check the `Alerts` tab.
 
 Prometheus has a lot of metrics, but its UI is very basic. For more complex dashboards we will need Grafana.
