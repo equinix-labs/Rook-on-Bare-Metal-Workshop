@@ -10,6 +10,16 @@
 
 While our previous use case (Wordpress) utilized MySQL, there are other open source database techologies that can utilize Rook deployed storage.  CockroachDB is one such other technology that can be deployed and utilize Rook managed storage. CockroachDB is a distributed SQL (“NewSQL”) database built on a transactional and strongly-consistent key-value store.  We're going to run through just such a deployment.
 
+## Disable unsupported Ceph features
+
+The Ubuntu 14.04 kernel being used in this workshop doesn't support the latest CEPH_FEATURE_NEW_OSDOPREPLY_ENCODING so we'll use the Hammer protocol instead.
+
+IF you haven't already, enable this setting using the Ceph Toolbox.
+
+```
+ceph osd crush tunables hammer
+```
+
 
 ## Install the CockroachDB operator
 
