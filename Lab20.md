@@ -7,7 +7,9 @@
 
 ## Disable unsupported Ceph features
 
-The Ubuntu 14.04 kernel being used in this workshop doesn't support the latest CEPH_FEATURE_NEW_OSDOPREPLY_ENCODING so we'll use the Hammer protocol instead. Test this configuration using the Ceph Toolbox.
+The Ubuntu 14.04 kernel being used in this workshop doesn't support the latest CEPH_FEATURE_NEW_OSDOPREPLY_ENCODING so we'll use the Hammer protocol instead.
+
+Enable this setting using the Ceph Toolbox.
 
 ```
 ceph osd crush tunables hammer
