@@ -5,6 +5,11 @@
 * Installing an stateful application in the cluster
 * Setup storage for the application
 
+## disable advanced ceph crush features on the ceph tool box
+
+```
+ceph osd crush tunables hammer
+```
 
 ## Download and Examine Application Config Files
 
