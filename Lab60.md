@@ -62,7 +62,7 @@ mc ls my-store/my-bucket
 With the newly created bucket, public read-only access can be enabled.
 
 ```
-mc policy download my-store/my-bucket/
+mc policy set download my-store/my-bucket/
 mc policy list my-store/my-bucket
 ```
 
