@@ -6,5 +6,7 @@ lab_password: "$6$uX6Ohn0iShiZiT5n$GVHs.n8SA/JqRS0THcQ0WxRBbVQTR85DlF/DLKXKfYrMp
 number_of_k8s_masters: 1
 plan_k8s_masters: t1.small.x86
 
+# s1.large.x86 and c2.medium.x86 have a spare SSD and are acceptable as a node
+# s1.large.x86 is available at more facilities so it is a better default
 number_of_k8s_nodes: 1
-plan_k8s_nodes: c2.medium.x86
+plan_k8s_nodes: s1.large.x86
