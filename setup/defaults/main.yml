@@ -2,3 +2,9 @@ kubespray_version: release-2.11
 terraform_version: 0.12.9
 
 lab_password: "$6$uX6Ohn0iShiZiT5n$GVHs.n8SA/JqRS0THcQ0WxRBbVQTR85DlF/DLKXKfYrMpH82HC6OruqeSfDkAA32X71LycO9XWpfvk0GZZfKJ."
+
+number_of_k8s_masters: 1
+plan_k8s_masters: t1.small.x86
+
+number_of_k8s_nodes: 1
+plan_k8s_nodes: c2.medium.x86

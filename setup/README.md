@@ -35,6 +35,11 @@ In `labs.ini` you can set a default `packet_facility` option in the `[labs:vars]
 ### Limit to a specific lab
 To (re)setup the lab1 and lab4 use the `--limit` option as follows: `ansible-playbook -i labs.ini  main.yml --limit lab1,lab4`
 
+
+### Customize labs
+
+You can use the `plan_k8s_masters` and `plan_k8s_nodes` to select a different hardware type for the Kubernetes masters and nodes. The `number_of_k8s_masters` and `number_of_k8s_nodes` options allow you to configure lab cluster size.
+
 ### Destroy labs
 
 :warning: this will run a `terraform destroy` and will delete all data in the labs.
