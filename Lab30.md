@@ -12,7 +12,7 @@ While our previous use case (Wordpress) utilized MySQL, there are other open sou
 
 ## Disable unsupported Ceph features
 
-The Ubuntu 14.04 kernel being used in this workshop doesn't support the latest CEPH_FEATURE_NEW_OSDOPREPLY_ENCODING so we'll use the Hammer protocol instead.
+The Ubuntu 16.04 kernel being used in this workshop doesn't support the latest CEPH_FEATURE_NEW_OSDOPREPLY_ENCODING so we'll use the Hammer protocol instead.
 
 IF you haven't already, enable this setting using the Ceph Toolbox.
 
