@@ -16,7 +16,7 @@ Use `kubectl describe -n rook-ceph CephBlockPools` and `kubectl describe -n rook
 
 Then go in the toolbox container and verify that a ceph pool has been created:
 ```
-rados lspools
+ceph-toolbox# rados lspools
 ```
 
 ## Create a PersistentVolume
@@ -28,7 +28,7 @@ Then verify that your PersistentVolumeClaim has been created with `kubectl get p
 
 Finally go in the toolbox container and verify that a RBD volume has been created:
 ```
-rbd ls -p replicapool
+ceph-toolbox# rbd ls -p replicapool
 ```
 
 You can also verify in the Ceph dashboard that the newly created volume is visible
