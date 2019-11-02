@@ -12,7 +12,7 @@ The Ubuntu 16.04 kernel being used in this workshop doesn't support the latest C
 Enable this setting using the Ceph Toolbox.
 
 ```
-ceph osd crush tunables hammer
+ceph-toolbox# ceph osd crush tunables hammer
 ```
 
 ## Download and Examine Application Config Files
