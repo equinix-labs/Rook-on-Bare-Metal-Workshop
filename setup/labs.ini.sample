@@ -1,11 +1,11 @@
 [labs:vars]
 # Set defaults for all labs
 terraform_state=present
-packet_facility=ams1
+packet_facility=ewr1
 
 # Parent group
 [labs]
-lab0 packet_facility=ams1
+#lab0 packet_facility=ams1
 #lab1
 #lab2
 #lab3
@@ -17,7 +17,7 @@ lab0 packet_facility=ams1
 #lab101
 
 [labs-ewr1]
-#lab200
+lab200
 #lab201
 
 [labs-sjc1]
@@ -27,10 +27,6 @@ lab0 packet_facility=ams1
 [labs-nrt1]
 #lab400
 #lab401
-
-[labs-dfw2]
-#lab500
-#lab501
 
 # Group configs
 [labs-ewr1:vars]
@@ -45,12 +41,8 @@ packet_facility=sjc1
 [labs-nrt1:vars]
 packet_facility=nrt1
 
-[labs-dfw2:vars]
-packet_facility=dfw2
-
 [labs:children]
 labs-ams1
 labs-ewr1
 labs-sjc1
 labs-nrt1
-labs-dfw2
