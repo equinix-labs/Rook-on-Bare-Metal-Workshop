@@ -21,7 +21,7 @@ Kubernetes environment, and the Rook/Ceph management interface.
 | Node     | CPU cores      | Memory (GB) | Boot (GB SSD) | Storage (GB SSD) | Details
 |----------|----------------|-------------|---------------|------------------|---------
 | Master   | 4 x 2.4 GHz    | 8 GB        | 1 x 80        | None             |[t1.small.x86](https://www.packet.com/cloud/servers/t1-small/)
-| Node     | 24 x 2.2 GHz   | 64 GB       | 2 x 120       | 2 x 480          |[c2.medium.x86](https://www.packet.com/cloud/servers/c2-medium-epyc/)
+| Node     | 24 x 2.2 GHz   | 256 GB      | 2 x 480       | 4 x 480          |[m1.xlarge.x86](https://www.packet.com/cloud/servers/m1-xlarge/)
 
 
 Boot drives are formatted with a file system while storage drives are unallocated and available as raw devices.
