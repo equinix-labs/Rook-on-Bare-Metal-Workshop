@@ -1,3 +1,7 @@
+![](https://img.shields.io/badge/Stability-Experimental-red.svg)
+
+This repository is [Experimental](https://github.com/packethost/standards/blob/master/experimental-statement.md) meaning that it's based on untested ideas or techniques and not yet established or finalized or involves a radically new and innovative style! This means that support is best effort (at best!) and we strongly encourage you to NOT use this in production.
+
 # Rook-on-Bare-Metal Workshop
 
 Welcome to the "Rook on Bare Metal Workshop"! This hands on workshop takes you through using Rook to provide stateful storage atop bare metal physical services to containerized workloads. You'll be provided with dedicated bare metal infrastructure (physical hosts) installed as Kubernetes nodes, lab instructions, and an instructor to follow through all the steps.
